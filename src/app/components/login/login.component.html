@@ -1,0 +1,59 @@
+<!-- login.component.html -->
+
+<div class="flex h-screen w-full px-0 mt-0 ml-0">
+  <!-- Left side image -->
+  <div class="hidden lg:block w-1/3 bg-sky-300 text-white">
+    <img
+      src="../../../assets/images/pexels-karolina-grabowska-5207099.jpg"
+      alt="Background Image"
+      class="object-cover w-full h-full"
+    />
+  </div>
+
+  <!-- Right side login form -->
+  <div class="w-full lg:w-1/2 flex items-center justify-center p-10">
+    <div class="max-w-md w-full">
+      <h2 class="text-3xl font-semibold text-gray-800 mb-6">Login</h2>
+
+      <!-- Your login form goes here -->
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-4">
+          <label
+            for="username"
+            class="block text-gray-600 text-sm font-medium mb-2"
+            >Username</label
+          >
+          <input
+            type="text"
+            id="username"
+            name="username"
+            [(ngModel)]="username"
+            class="w-full border-2 border-gray-300 p-2 rounded focus:outline-none focus:border-sky-300"
+          />
+        </div>
+
+        <div class="mb-4">
+          <label
+            for="password"
+            class="block text-gray-600 text-sm font-medium mb-2"
+            >Password</label
+          >
+          <input
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="password"
+            class="w-full border-2 border-gray-300 p-2 rounded focus:outline-none focus:border-sky-300"
+          />
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-sky-300 text-white p-2 rounded hover:bg-sky-300 focus:outline-none focus:bg-sky-500"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

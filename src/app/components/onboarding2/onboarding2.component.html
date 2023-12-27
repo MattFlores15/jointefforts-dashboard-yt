@@ -1,0 +1,37 @@
+<!-- onboarding.component.html -->
+
+<div class="flex flex-row-reverse items-center justify-between h-screen">
+  <!-- Left side with big image -->
+  <div class="flex-shrink-0">
+    <img
+      src="../../../assets/images/Onboarding Vector2.png"
+      alt="Onboarding Image"
+      class="w-auto h-screen"
+    />
+  </div>
+
+  <!-- Right side with title, text, and button -->
+  <div class="ml-20 flex flex-col gap-5 w-fit px-10">
+    <h1 class="text-4xl font-bold mb-4">
+      Unveiling Insights, Building Resilience
+    </h1>
+    <p class="text-lg text-gray-600 w-fit">
+      💙 Thank you for joining the HealthPulse community! 💙
+      <br />
+      <br />
+      Your participation not only sheds light on critical issues but also
+      contributes to the betterment of healthcare globally. Navigate through our
+      user-friendly dashboard to explore survey options, stay informed with
+      uplifting news, and witness the powerful impact your voice has on
+      healthcare outcomes.
+    </p>
+
+    <!-- Button to navigate to the next onboarding page -->
+    <button
+      class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full mt-4 w-fit"
+      (click)="navigateToNextPage()"
+    >
+      Next
+    </button>
+  </div>
+</div>

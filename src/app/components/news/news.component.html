@@ -1,0 +1,99 @@
+<div class="flex justify-between items-start flex-col p-10 w-fit">
+  <h2 class="text-3xl font-semibold mb-6">Joint Efforts News</h2>
+
+  <div class="flex flex-col gap-10 justify-between items-start w-fit">
+    <div class="flex justify-between items-center gap-7 h-fit w-fit">
+      <!-- Article 1 - Vertical Card -->
+      <div class="col-span-2 lg:col-span-1">
+        <div
+          class="relative bg-blue-500 text-white p-0 rounded-md overflow-hidden w-72 h-96"
+        >
+          <img
+            src="../../../assets/images/pexels-rdne-stock-project-6129455.jpg"
+            alt=""
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute bottom-0 text-black left-0 right-0 bg-white bg-opacity-75 p-4"
+          >
+            <h3 class="text-xl font-semibold mb-3">
+              Revolutionizing Healthcare: Survey Program Alleviates Staff
+              Shortages
+            </h3>
+            <p class="text-sm">
+              Learn how a groundbreaking survey program is transforming the
+              healthcare landscape by addressing staff shortages...
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Article 2 - Vertical Card -->
+      <div class="col-span-2 lg:col-span-1">
+        <div
+          class="relative bg-green-500 text-white p-0 rounded-md w-72 h-96 overflow-hidden"
+        >
+          <img
+            src="../../../assets/images/pexels-tessy-agbonome-19131211.jpg"
+            alt=""
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute bottom-0 text-black left-0 right-0 bg-white bg-opacity-75 p-4"
+          >
+            <h3 class="text-xl font-semibold mb-3">
+              Survey Insights: Boosting Morale Among Healthcare Professionals
+            </h3>
+            <p class="text-sm">
+              Dive into the survey findings that unveil the impact on healthcare
+              workers' morale...
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Article 3 - Horizontal Card -->
+      <div class="col-span-2 lg:col-span-1">
+        <div
+          class="relative bg-yellow-500 text-white p-0 rounded-md w-full h-96 overflow-hidden"
+        >
+          <img
+            src="../../../assets/images/pexels-cottonbro-studio-7578802.jpg"
+            alt=""
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute bottom-0 text-black left-0 right-0 bg-white bg-opacity-75 p-4"
+          >
+            <h3 class="text-xl font-semibold mb-3">
+              From Data to Action: How Survey Feedback is Reshaping Healthcare
+              Policies
+            </h3>
+            <p class="text-sm">
+              Explore the tangible outcomes of the survey program as it
+              translates data into action...
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Articles 4-7 - Slider -->
+    <ngx-slick-carousel class="slider" [config]="sliderConfig">
+      <div class="flex items-start justify-between w-fit gap-5">
+        <div
+          *ngFor="let article of articles.slice(1 - 9)"
+          class="bg-gray-200 p-2 rounded-md h-96 w-72"
+        >
+          <img
+            src="{{ article.image }}"
+            alt=""
+            class="w-full h-48 object-cover"
+          />
+          <h3 class="text-lg font-semibold mb-3">{{ article.title }}</h3>
+          <p class="text-sm">{{ article.summary }}</p>
+        </div>
+      </div>
+    </ngx-slick-carousel>
+  </div>
+</div>

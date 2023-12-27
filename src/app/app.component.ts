@@ -1,14 +1,62 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { TopNavbarComponent } from './components/top-navbar/top-navbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ActivatedRoute } from '@angular/router';
+import { ChangeDetectionStrategy } from '@angular/core';
+import { ActivationEnd } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { OnInit } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
+
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CommonModule, RouterOutlet, TopNavbarComponent, SidebarComponent, FontAwesomeModule, FormsModule, ReactiveFormsModule, SlickCarouselModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'jointefforts-dashboard';
+  sidebarVisible = false;
+  topNavbarVisible = false;
+
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {
+    this.router.events
+      .pipe(filter((event) => event instanceof ActivationEnd))
+      .subscribe(() => {
+        this.shouldShowSidebarAndTopNavbar();
+      });
+  }
+
+  shouldShowSidebarAndTopNavbar(): void {
+    const excludedRoutes = ['/onboarding1', '/onboarding2', '/login'];
+
+    const currentRoute = this.router.url;
+
+    this.sidebarVisible = !excludedRoutes.includes(currentRoute);
+    this.topNavbarVisible = !excludedRoutes.includes(currentRoute);
+  }
+
+  shouldShowMarginLeft(): boolean {
+  const excludedRoutes = ['/onboarding1', '/onboarding2', '/login'];
+  const currentRoute = this.router.url;
+  return !excludedRoutes.includes(currentRoute);
+}
+
+shouldShowMarginTop(): boolean {
+  const excludedRoutes = ['/onboarding1', '/onboarding2', '/login'];
+  const currentRoute = this.router.url;
+  return !excludedRoutes.includes(currentRoute);
+}
 }

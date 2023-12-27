@@ -1,0 +1,35 @@
+<!-- onboarding.component.html -->
+
+<div class="flex items-center justify-between h-screen w-screen mt-0 ml-0">
+  <!-- Left side with big image -->
+  <div class="flex-shrink-0 self-start">
+    <img
+      src="../../../assets/images/Onboarding Vector.png"
+      alt="Onboarding Image"
+      class="w-auto h-screen"
+    />
+  </div>
+
+  <!-- Right side with title, text, and button -->
+  <div class="w-fit px-10 self-center mr-60 flex flex-col gap-5">
+    <h1 class="text-4xl font-bold mb-4">Empower Change, Shape Tomorrow</h1>
+    <p class="text-lg text-gray-600 w-fit">
+      🌟 Welcome to Joint Efforts, where your voice shapes the future of
+      healthcare! 🌟
+      <br />
+      <br />
+      As a healthcare professional, your insights are invaluable. Joint Efforts
+      is a groundbreaking initiative designed to understand the impact of staff
+      shortages on your well-being and the healthcare system as a whole. Join us
+      on this journey to make a difference!
+    </p>
+
+    <!-- Button to navigate to the next onboarding page -->
+    <button
+      class="bg-blue-500 text-white font-bold py-2 px-4 rounded-full mt-4 w-fit"
+      (click)="navigateToNextPage()"
+    >
+      Next
+    </button>
+  </div>
+</div>

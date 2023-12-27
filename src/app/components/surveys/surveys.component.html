@@ -1,0 +1,184 @@
+<div class="flex justify-between items-start w-full">
+  <div class="flex flex-col justify-between w-fit">
+    <div class="flex-1 p-4 flex-col gap-20 justify-between w-fit rounded-lg">
+      <!-- Welcome Card -->
+      <div
+        class="bg-gradient-to-b from-sky-300 to-cyan-100 p-4 shadow-md rounded-lg flex justify-between w-fit h-auto"
+      >
+        <div class="flex justify-between w-full h-auto gap-36">
+          <div class="flex">
+            <!-- Avatar -->
+            <div>
+              <div class="rounded-full overflow-hidden w-20 h-24">
+                <img
+                  src="../../../assets/images/pexels-karolina-grabowska-5206931.jpg"
+                  alt="Profile Avatar"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col justify-start gap-1 h-full">
+            <!-- New and Completed Surveys -->
+            <div class="flex justify-evenly gap-1">
+              <div class="w-48 h-16 relative">
+                <div
+                  class="w-48 h-16 bg-white bg-opacity-60 rounded-lg flex justify-between p-2"
+                >
+                  <div
+                    class="w-28 h-auto text-center text-black text-lg font-medium capitalize tracking-tight"
+                  >
+                    New Surveys
+                  </div>
+                  <div
+                    class="w-12 h-7 text-black text-center text-4xl font-medium"
+                  >
+                    4
+                  </div>
+                </div>
+              </div>
+              <div class="w-48 h-auto flex flex-col gap-5">
+                <div
+                  class="w-48 h-auto bg-white bg-opacity-60 rounded-lg flex-col justify-between p-2"
+                >
+                  <div class="flex">
+                    <div
+                      class="w-44 h-auto text-black text-base font-medium capitalize tracking-tight"
+                    >
+                      Completed Surveys
+                    </div>
+                    <div class="w-12 h-7 text-black text-4xl font-medium">
+                      9
+                    </div>
+                  </div>
+                  <div class="w-auto h-auto flex items-start flex-col">
+                    <div
+                      class="w-14 h-1 left-0 top-0 bg-teal-600 bg-opacity-30 rounded-lg"
+                    ></div>
+                    <div class="w-9 h-4">
+                      <div
+                        class="w-6 h-auto text-teal-600 text-s font-normal text-center self-center"
+                      >
+                        20%
+                      </div>
+                      <div class="w-2 h-2"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-2xl leading-3 font-bold self-end text-right">
+                  Welcome User
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Survey Progress Card -->
+  <div class="mr-5 p-4 bg-white shadow-md rounded self-start mt-4">
+    <h2 class="text-lg font-semibold mb-2">Surveys Progress</h2>
+    <!-- Donut Chart for Overall Surveys Progress -->
+    <app-doughnut-chart></app-doughnut-chart>
+  </div>
+</div>
+<!-- Header -->
+<div class="w-full p-4">
+  <div class="p-4 text-black">
+    <h1 class="text-2xl font-bold">Surveys Page</h1>
+  </div>
+
+  <!-- Filters -->
+  <div class="mt-4 flex justify-between px-8 space-x-4 p-2">
+    <!-- Replace dropdown with tabs for survey type filtering -->
+    <div>
+      <div class="flex space-x-4">
+        <button
+          class="tab-btn hover:text-violet-200 hover:border-b hover:border-violet-200"
+          [ngClass]="{ 'tab-btn-active': currentSurveyType === 'Overview' }"
+          (click)="filterSurveys('Overview')"
+        >
+          Overview
+        </button>
+        <button
+          class="tab-btn hover:text-violet-200 hover:border-b hover:border-violet-200"
+          [ngClass]="{ 'tab-btn-active': currentSurveyType === 'Weekly' }"
+          (click)="filterSurveys('Weekly')"
+        >
+          Weekly Surveys
+        </button>
+        <button
+          class="tab-btn hover:text-violet-200 hover:border-b hover:border-violet-200"
+          [ngClass]="{ 'tab-btn-active': currentSurveyType === 'Monthly' }"
+          (click)="filterSurveys('Monthly')"
+        >
+          Monthly Surveys
+        </button>
+        <button
+          class="tab-btn hover:text-violet-200 hover:border-b hover:border-violet-200"
+          [ngClass]="{ 'tab-btn-active': currentSurveyType === 'Biannual' }"
+          (click)="filterSurveys('Biannual')"
+        >
+          Biannual Surveys
+        </button>
+      </div>
+    </div>
+
+    <!-- Existing code for dropdown filter by status -->
+    <div>
+      <label for="surveyStatus" class="mr-2">Filter by Status:</label>
+      <select
+        id="surveyStatus"
+        class="p-2 border border-gray-300 rounded w-fit cursor-pointer"
+        (change)="filterByStatus($event)"
+      >
+        <option value="To do">To Do</option>
+        <option value="Completed">Completed</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Updated Survey Cards Table -->
+  <div class="container mx-auto p-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Sample cards, replace with actual survey data using *ngFor -->
+      <div *ngFor="let survey of filteredSurveys">
+        <div class="bg-white p-4 rounded-md shadow-md">
+          <h2 class="text-lg font-semibold mb-2">{{ survey.title }}</h2>
+          <p class="text-gray-500">{{ survey.description }}</p>
+          <div class="mt-4 flex justify-between">
+            <span class="text-gray-600"
+              >Status:
+              <span [class.text-green-500]="survey.status === 'Completed'">
+                {{ survey.status }}</span
+              ></span
+            >
+            <span class="text-gray-600"
+              >Type: <span class="text-blue-500"> {{ survey.type }}</span></span
+            >
+          </div>
+          <!-- Add progress bar based on survey completion status -->
+          <div *ngIf="survey.status === 'Completed'" class="mt-4">
+            <div
+              [ngClass]="getProgressBarColor(survey.completionPercentage)"
+              class="h-2 w-full rounded-md"
+            >
+              <!-- Set width dynamically based on completion percentage -->
+              <div
+                [style.width.%]="survey.completionPercentage"
+                class="h-full rounded-md"
+              ></div>
+            </div>
+            <div
+              [ngClass]="getProgressTextColor(survey.completionPercentage)"
+              class="mt-2"
+            >
+              {{ survey.completionPercentage }}%
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

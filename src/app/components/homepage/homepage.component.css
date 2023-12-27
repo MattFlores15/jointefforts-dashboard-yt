@@ -1,0 +1,19 @@
+/* homepage.component.css */
+.day-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.day-of-week {
+    font-size: 0.8em;
+    color: #999;
+    /* or any other color for day of the week */
+}
+
+.day-number {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    /* or any other color for day number */
+}
