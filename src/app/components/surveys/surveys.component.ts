@@ -28,18 +28,28 @@ export class SurveysComponent {
 
 
   getProgressBarWidth(percentage: number): string {
-    return `${percentage}%`;
-  }
-  
-  getProgressBarColor(percentage: number): string {
-    if (percentage >= 80) {
-      return 'bg-green-500';
-    } else if (percentage >= 20) {
-      return 'bg-teal-600';
-    } else {
-      return 'bg-red-500';
+    if (percentage === 0) {
+      return '100%';
+    }
+    else  {
+      return percentage + '%'
     }
   }
+
+
+  
+  getProgressBarColor(percentage: number): string {
+  if (percentage === 0) {
+    return 'bg-gray-300'; // Light gray for 0% completion
+  } else if (percentage >= 80) {
+    return 'bg-green-500';
+  } else if (percentage >= 20) {
+    return 'bg-teal-600';
+  } else {
+    return 'bg-red-500';
+  }
+}
+
 
   getProgressTextColor(percentage: number): string {
     if (percentage >= 80) {

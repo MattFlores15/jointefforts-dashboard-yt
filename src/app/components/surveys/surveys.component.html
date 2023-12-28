@@ -69,11 +69,12 @@
   </div>
 
   <!-- Updated Survey Cards Table -->
+  <!-- Updated Survey Cards Table -->
   <div class="container mx-auto p-4">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <!-- Sample cards, replace with actual survey data using *ngFor -->
       <div *ngFor="let survey of filteredSurveys">
-        <div class="bg-white p-4 rounded-md shadow-md">
+        <div class="bg-white p-4 rounded-md shadow-md hover:shadow-violet-400">
           <h2 class="text-lg font-semibold mb-2">{{ survey.title }}</h2>
           <p class="text-gray-500">{{ survey.description }}</p>
           <div class="mt-4 flex justify-between">
@@ -88,16 +89,17 @@
             >
           </div>
           <!-- Add progress bar based on survey completion status -->
-          <div *ngIf="survey.status === 'Completed'" class="mt-4">
+          <div class="mt-4">
             <div
+              [style.width.%]="survey.completionPercentage"
               [ngClass]="getProgressBarColor(survey.completionPercentage)"
               class="h-2 w-full rounded-md"
             >
               <!-- Set width dynamically based on completion percentage -->
-              <div
-                [style.width.%]="survey.completionPercentage"
+              <!-- <div
+                [style.width]="getProgressBarWidth(survey.completionPercentage)"
                 class="h-full rounded-md"
-              ></div>
+              ></div> -->
             </div>
             <div
               [ngClass]="getProgressTextColor(survey.completionPercentage)"
