@@ -1,0 +1,58 @@
+/* To specify background color and border */
+.e-calendar {
+    background-color: #C8F0FF;
+    border: 3px solid #72D9FF;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #888888;
+}
+
+/* To specify background color, color, and border */
+.e-calendar .e-content td:hover span.e-day,
+.e-calendar .e-content td:focus span.e-day,
+.e-bigger.e-small .e-calendar .e-content td:hover span.e-day,
+.e-bigger.e-small .e-calendar .e-content td:focus span.e-day {
+    background-color: #72D9FF;
+    border: 2px solid;
+    color: #212529;
+}
+
+/* To specify border */
+.e-calendar .e-content span.e-day,
+.e-bigger.e-small .e-calendar .e-content span.e-day {
+    border: 1px solid;
+}
+
+/* To specify color and font size  */
+.e-calendar .e-header .e-title,
+.e-bigger.e-small .e-calendar .e-header .e-title {
+    color: black;
+    font-size: 1.1rem;
+}
+
+/* To specify color and border  */
+.e-calendar .e-header span,
+.e-bigger.e-small .e-calendar .e-header span {
+    /* border: 1px solid; */
+    color: black;
+}
+
+/* To specify background color, color, and border-color  */
+.e-calendar .e-btn.e-today.e-flat.e-primary,
+.e-calendar .e-css.e-btn.e-today.e-flat.e-primary {
+    background-color: #72D9FF;
+    border-color: transparent;
+    color: black;
+}
+
+/* To specify background color and color  */
+.e-calendar .e-content td.e-focused-date.e-today span.e-day {
+    background-color: #72D9FF;
+    color: #fff;
+}
+
+/* To specify background */
+.e-calendar .e-content thead,
+.e-bigger.e-small .e-calendar .e-content thead {
+    background: transparent;
+    color: black;
+}

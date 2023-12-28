@@ -1,11 +1,12 @@
 import { CommonModule, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 @Component({
   selector: 'app-news',
   standalone: true,
-  imports: [CommonModule, NgFor, SlickCarouselModule],
+  imports: [CommonModule, NgFor, SlickCarouselModule, RouterModule],
   templateUrl: './news.component.html',
   styleUrl: './news.component.css'
 })

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule, Islamic } from '@syncfusion/ej2-angular-calendars';
 import { Router, NavigationEnd } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
@@ -20,7 +21,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
   selector: 'app-root',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, RouterOutlet, TopNavbarComponent, SidebarComponent, FontAwesomeModule, FormsModule, ReactiveFormsModule, SlickCarouselModule],
+  imports: [CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule, CommonModule, RouterOutlet, TopNavbarComponent, SidebarComponent, FontAwesomeModule, FormsModule, ReactiveFormsModule, SlickCarouselModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

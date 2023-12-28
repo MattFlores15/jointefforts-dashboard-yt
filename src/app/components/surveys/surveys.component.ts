@@ -5,6 +5,7 @@ import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { Chart } from 'chart.js';
 import { ChangeDetectorRef } from '@angular/core';
 import { DoughnutChartComponent } from '../doughnut-chart/doughnut-chart.component';
+import { WelcomeCardComponent } from '../welcome-card/welcome-card.component';
 
 
 interface Survey {
@@ -18,7 +19,7 @@ interface Survey {
 @Component({
   selector: 'app-surveys',
   standalone: true,
-  imports: [CommonModule, DoughnutChartComponent],
+  imports: [CommonModule, DoughnutChartComponent, WelcomeCardComponent],
   templateUrl: './surveys.component.html',
   styleUrls: ['./surveys.component.css']
 })

@@ -5,6 +5,10 @@ import { FormsModule } from '@angular/forms'; // or import { ReactiveFormsModule
 import { AuthService } from './components/services/auth.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { CalendarModule} from '@syncfusion/ej2-angular-calendars';
+import { CalendarComponent } from './components/calendar/calendar.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -12,10 +16,13 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     // ... your components
   ],
   imports: [
+    BrowserModule,
     CommonModule,
     FormsModule, // or ReactiveFormsModule
     ReactiveFormsModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    CalendarModule,
+    RouterModule,
     // ... other modules
   ],
   providers: [AuthService], 

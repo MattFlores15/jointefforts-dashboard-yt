@@ -1,0 +1,13 @@
+<div class="w-fit h-full" id="calendar-card">
+  <ejs-calendar
+    [min]="minDate"
+    [max]="maxDate"
+    [ariaSelected]="selectedDate"
+    [isMultiSelection]="false"
+    [showTodayButton]="false"
+    [start]="start"
+    [weekNumber]="false"
+    (navigating)="onNavigating($event)"
+    class="mx-4 mt-4"
+  ></ejs-calendar>
+</div>
