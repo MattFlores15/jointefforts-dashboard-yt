@@ -37,7 +37,11 @@
         <h3 class="text-base font-bold mb-2">Popular:</h3>
         <div class="flex flex-wrap gap-4">
           <div class="p-2 rounded-md">
-            <p class="text-base mb-2">How do I access the Surveys page?</p>
+            <a
+              routerLink="/support-answer"
+              class="text-base mb-2 hover:underline hover:text-violet-300 transition duration-200"
+              >How do I access the Surveys page?</a
+            >
           </div>
           <div class="py-2 rounded-md">
             <p class="text-base mb-2">How often are survey results updated?</p>
@@ -66,7 +70,8 @@
       <ul class="flex flex-col gap-2 p-2">
         <!-- Loop through Questions in each card -->
         <li
-          class="flex justify-start items-center gap-2"
+          routerLink="/support-answer"
+          class="flex justify-start items-center gap-2 cursor-pointer hover:underline hover:text-violet-300 transition duration-200"
           *ngFor="let question of card.questions"
         >
           <i class="fa-solid fa-clipboard-question"></i>{{ question }}

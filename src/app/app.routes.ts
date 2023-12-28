@@ -16,6 +16,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TopNavbarComponent } from './components/top-navbar/top-navbar.component';
 import { IndividualSurveyComponent } from './components/individual-survey/individual-survey.component';
 import { NewsArticleComponent } from './components/news-article/news-article.component';
+import { SupportAnswerComponent } from './components/support-answer/support-answer.component';
 
 
 export const AppRoutes: Routes = [
@@ -31,6 +32,7 @@ export const AppRoutes: Routes = [
   { path: 'news', component: NewsComponent },
   { path: 'news-article', component: NewsArticleComponent },
   { path: 'support', component: SupportComponent },
+  { path: 'support-answer', component: SupportAnswerComponent},
   { path: 'individual-survey', component: IndividualSurveyComponent },
 
 ];

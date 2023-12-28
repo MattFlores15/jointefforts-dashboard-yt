@@ -1,0 +1,171 @@
+<div class="p-8 flex flex-col gap-10 justify-start w-full">
+  <div class="flex flex-col bg-blue-500 p-0 text-white">
+    <img
+      src="../../../assets/images/support-bg.jpg"
+      alt=""
+      class="w-full h-full object-cover"
+    />
+    <div
+      class="w-fit absolute p-8 mt-24 ml-10 flex flex-col justify-between items-start gap-5"
+    >
+      <h1 class="text-4xl font-bold">Support Page</h1>
+      <p class="w-2/3">
+        Welcome to our support page. Find answers to common questions or use the
+        search bar to get specific help.
+      </p>
+
+      <!-- Search Bar -->
+      <div class="rounded-md w-fit flex">
+        <div class="relative w-full">
+          <input
+            type="text"
+            placeholder="Search"
+            class="w-fit p-2 px-10 rounded-l-md border-none text-black focus:outline-none focus:ring-1 focus:ring-violet-300 focus:border-transparent"
+          />
+          <i class="absolute left-3 top-2 text-gray-400">
+            <i class="fas fa-search"></i>
+          </i>
+        </div>
+        <button class="w-fit rounded-r-lg bg-violet-400 py-2 px-6 text-white">
+          Search
+        </button>
+      </div>
+
+      <!-- Popular Questions -->
+      <div class="mb-4 flex justify-start w-fit items-center">
+        <h3 class="text-base font-bold mb-2">Popular:</h3>
+        <div class="flex flex-wrap gap-4">
+          <div class="p-2 rounded-md">
+            <a
+              routerLink="/support-answer"
+              class="text-base mb-2 hover:underline hover:text-violet-300 transition duration-200"
+              >How do I access the Surveys page?</a
+            >
+          </div>
+          <div class="py-2 rounded-md">
+            <p class="text-base mb-2">How often are survey results updated?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- answer-page.component.html -->
+  <div class="flex flex-col justify-start shadow-md p-4 w-fit">
+    <div class="text-black p-8">
+      <button
+        routerLink="/support"
+        class="text-black bg-transparent border border-solid py-2 px-4 rounded"
+      >
+        <i class="fa-solid fa-angle-left"></i> Back
+      </button>
+      <h1 class="text-4xl font-bold mt-4">How do I access the Surveys page?</h1>
+    </div>
+
+    <div class="p-8 flex flex-col items-start justify-between">
+      <p class="mb-4">
+        To access the Surveys page and begin your engagement with our healthcare
+        improvement initiatives, follow these simple steps:
+      </p>
+      <ol class="list-decimal list-inside mb-4">
+        <li>
+          Login to Your Dashboard:
+          <ul class="list-disc list-inside pl-4">
+            <li>
+              Visit the dashboard login page and enter your credentials
+              (username and password).
+            </li>
+          </ul>
+        </li>
+        <li>
+          Main Menu Navigation:
+          <ul class="list-disc list-inside pl-4">
+            <li>
+              Once logged in, you'll find the main menu on the dashboard. Look
+              for the "Surveys" option among the main navigation links.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Click on "Surveys":
+          <ul class="list-disc list-inside pl-4">
+            <li>
+              Select the "Surveys" option from the main menu. This action will
+              direct you to the dedicated Surveys page.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Explore Available Surveys:
+          <ul class="list-disc list-inside pl-4">
+            <li>
+              On the Surveys page, you'll find a collection of small cards
+              representing various surveys. Click on a card to explore details
+              and start participating.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Utilize Filters for Customization:
+          <ul class="list-disc list-inside pl-4">
+            <li>
+              To streamline your survey experience, use the filtering options
+              provided. Filter surveys by status (To Do or Completed) and
+              explore specific categories (Overview, Short surveys, Long
+              surveys, Mixed, and Report) using the respective tabs.
+            </li>
+          </ul>
+        </li>
+        <li>
+          Monitor Overall Progress:
+          <ul class="list-disc list-inside pl-4">
+            <li>
+              Keep an eye on your overall survey progress with the donut graph
+              displayed on the Surveys page. This visual representation provides
+              a quick overview of your contributions.
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <p>
+        Remember, your participation is crucial in shaping the future of
+        healthcare. If you have any further questions or encounter issues, feel
+        free to explore our Support section or reach out to our support team for
+        assistance.
+      </p>
+
+      <!-- CTA for assessing helpfulness -->
+      <!-- Improved CTA for assessing helpfulness with thumbs up/down icons -->
+      <div class="bg-white p-4 rounded-md mt-8 w-fit self-center">
+        <h2 class="text-xl font-bold mb-4">Is this article helpful?</h2>
+        <div class="flex justify-center items-center gap-1">
+          <div
+            *ngIf="feedback !== 'thumbsDown'"
+            class="flex items-center cursor-pointer"
+            (click)="handleFeedback('thumbsUp')"
+            [ngClass]="{
+              'text-green-500': feedback === 'thumbsUp',
+              'text-gray-600': feedback !== 'thumbsUp'
+            }"
+          >
+            <i class="fas fa-thumbs-up text-xl mr-2"></i>
+            <span></span>
+          </div>
+          <div
+            *ngIf="feedback !== 'thumbsUp'"
+            class="flex items-center cursor-pointer"
+            (click)="handleFeedback('thumbsDown')"
+            [ngClass]="{
+              'text-red-500': feedback === 'thumbsDown',
+              'text-gray-600': feedback !== 'thumbsDown'
+            }"
+          >
+            <i class="fas fa-thumbs-down text-xl mr-2 fa-flip-horizontal"></i>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

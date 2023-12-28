@@ -1,10 +1,11 @@
 import { NgClass, NgFor, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-support',
   standalone: true,
-  imports: [NgFor, NgClass, NgStyle],
+  imports: [NgFor, NgClass, NgStyle, RouterModule],
   templateUrl: './support.component.html',
   styleUrl: './support.component.css'
 })
