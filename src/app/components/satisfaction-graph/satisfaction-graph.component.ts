@@ -20,7 +20,7 @@ export class SatisfactionGraphComponent {
     this.chart = new Chart("satisfactionChart", {
       type: 'bar',
       data: {
-        labels: ['Survey 1', 'Survey 2', 'Survey 3', 'Survey 4', 'Survey 5', 'Survey 6'],
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         datasets: [
           {
             label: 'Overall Surveys Completed',
@@ -28,6 +28,7 @@ export class SatisfactionGraphComponent {
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
             borderColor: 'rgba(75, 192, 192, 1)',
             borderWidth: 2,
+            borderRadius: 10,
             // fill: false,
           },
         ],

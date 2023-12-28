@@ -20,19 +20,17 @@ export class JobSecurityGraphComponent {
     this.chart = new Chart("jobSecurityChart", {
       type: 'polarArea',
       data: {
-        labels: ['Survey 1', 'Survey 2', 'Survey 3', 'Survey 4', 'Survey 5', 'Survey 6'],
+        labels: ['Nursing', 'Psychology', 'General Practice', 'Administration'],
         datasets: [
           {
             label: 'Job Security',
             data: this.data,
             borderColor: 'rgba(75, 192, 192, 1)',
             backgroundColor: [
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(75, 192, 192, 0.4)',
-              'rgba(75, 192, 192, 0.6)',
-              'rgba(75, 192, 192, 0.8)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(75, 192, 192, 1)',
+              'rgba(255, 99, 132, 0.6)',
+              'rgba(255, 205, 86, 0.6)',
+              'rgba(54, 162, 235, 0.6)',
+              'rgba(255, 159, 64, 0.6)',
             ],
             borderWidth: 2,
           },

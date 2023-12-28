@@ -1,80 +1,9 @@
 <!-- src/app/results/results.component.html -->
-<div class="flex justify-between items-start w-full">
+<div class="flex justify-between items-start w-full p-4">
   <div class="flex flex-col justify-between w-fit">
     <div class="flex-1 p-4 flex-col gap-20 justify-between w-fit rounded-lg">
       <!-- Welcome Card -->
-      <div
-        class="bg-gradient-to-b from-sky-300 to-cyan-100 p-4 shadow-md rounded-lg flex justify-between w-fit h-auto"
-      >
-        <div class="flex justify-between w-full h-auto gap-36">
-          <div class="flex">
-            <!-- Avatar -->
-            <div>
-              <div class="rounded-full overflow-hidden w-20 h-24">
-                <img
-                  src="../../../assets/images/pexels-karolina-grabowska-5206931.jpg"
-                  alt="Profile Avatar"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div class="flex flex-col justify-start gap-1 h-full">
-            <!-- New and Completed Surveys -->
-            <div class="flex justify-evenly gap-1">
-              <div class="w-48 h-16 relative">
-                <div
-                  class="w-48 h-16 bg-white bg-opacity-60 rounded-lg flex justify-between p-2"
-                >
-                  <div
-                    class="w-28 h-auto text-center text-black text-lg font-medium capitalize tracking-tight"
-                  >
-                    New Surveys
-                  </div>
-                  <div
-                    class="w-12 h-7 text-black text-center text-4xl font-medium"
-                  >
-                    4
-                  </div>
-                </div>
-              </div>
-              <div class="w-48 h-auto flex flex-col gap-5">
-                <div
-                  class="w-48 h-auto bg-white bg-opacity-60 rounded-lg flex-col justify-between p-2"
-                >
-                  <div class="flex">
-                    <div
-                      class="w-44 h-auto text-black text-base font-medium capitalize tracking-tight"
-                    >
-                      Completed Surveys
-                    </div>
-                    <div class="w-12 h-7 text-black text-4xl font-medium">
-                      9
-                    </div>
-                  </div>
-                  <div class="w-auto h-auto flex items-start flex-col">
-                    <div
-                      class="w-14 h-1 left-0 top-0 bg-teal-600 bg-opacity-30 rounded-lg"
-                    ></div>
-                    <div class="w-9 h-4">
-                      <div
-                        class="w-6 h-auto text-teal-600 text-s font-normal text-center self-center"
-                      >
-                        20%
-                      </div>
-                      <div class="w-2 h-2"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="text-2xl leading-3 font-bold self-end text-right">
-                  Welcome User
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-welcome-card></app-welcome-card>
     </div>
   </div>
   <!-- Survey Progress Card -->
@@ -86,7 +15,8 @@
 </div>
 <div class="w-full p-4">
   <h1 class="leading-8 text-2xl font-bold mb-4 px-5">Results</h1>
-  <div class="flex justify-between items-center mb-4 p-5">
+  <!-- Filters -->
+  <div class="flex justify-between items-center mb-2 p-5">
     <div class="flex justify-evenly items-center gap-5">
       <div class="flex gap-2 items-center justify-evenly">
         <label for="timeframe">Timeframe:</label>
@@ -139,32 +69,41 @@
   </div>
 
   <!-- Include the graph components -->
-  <div class="flex flex-col justify-evenly items-center w-full p-10">
-    <div class="flex justify-between items-start w-full">
-      <div class="flex flex-col justify-evenly items-start gap-10 w-fit">
+  <div class="flex flex-col justify-evenly items-center w-full py-6 px-14">
+    <div class="flex justify-between items-start w-full gap-10">
+      <div
+        class="flex flex-col justify-evenly items-start gap-10 w-full h-full"
+      >
         <app-satisfaction-graph
           [data]="satisfactionData"
+          class="w-full h-full"
         ></app-satisfaction-graph>
-        <div class="flex flex-col gap-5 justify-between items-start">
-          <div class="flex justify-between items-start gap-10 w-full">
-            <app-workload-graph [data]="workloadData"></app-workload-graph>
-            <app-stress-level-graph
-              [data]="stressLevelData"
-            ></app-stress-level-graph>
+        <div class="flex flex-col gap-5 justify-between items-start w-full">
+          <div class="flex justify-between items-start w-full">
+            <app-workload-graph
+              [data]="workloadData"
+              class="w-full h-full"
+            ></app-workload-graph>
           </div>
           <div
             class="flex-row-reverse flex justify-between items-start gap-10 w-full"
           >
-            <app-job-security-graph
-              [data]="jobSecurityData"
-            ></app-job-security-graph>
             <app-communication-graph
+              class="w-full h-full"
               [data]="communicationData"
             ></app-communication-graph>
           </div>
         </div>
       </div>
-      <app-teamwork-graph [data]="teamworkData"></app-teamwork-graph>
+      <div class="flex flex-col justify-between items-center gap-8 h-full">
+        <app-teamwork-graph [data]="teamworkData"></app-teamwork-graph>
+        <app-job-security-graph
+          [data]="jobSecurityData"
+        ></app-job-security-graph>
+        <app-stress-level-graph
+          [data]="stressLevelData"
+        ></app-stress-level-graph>
+      </div>
     </div>
   </div>
 </div>

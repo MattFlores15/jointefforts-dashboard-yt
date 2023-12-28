@@ -9,7 +9,7 @@ import { Chart } from 'chart.js/auto';
   styleUrl: './communication-graph.component.css'
 })
 export class CommunicationGraphComponent {
-  @Input() data!: number[];
+ @Input() data!: number[];
 
   public chart: any;
 
@@ -17,22 +17,30 @@ export class CommunicationGraphComponent {
     const canvas = document.getElementById('communicationChart') as HTMLCanvasElement;
     const ctx = canvas.getContext('2d');
 
+    const dataColors = [
+      { borderColor: 'rgba(255, 99, 132, 1)', backgroundColor: 'rgba(255, 99, 132, 0.6)' },
+      { borderColor: 'rgba(54, 162, 235, 1)', backgroundColor: 'rgba(54, 162, 235, 0.6)' },
+      { borderColor: 'rgba(255, 205, 86, 1)', backgroundColor: 'rgba(255, 205, 86, 0.6)' },
+      { borderColor: 'rgba(75, 192, 192, 1)', backgroundColor: 'rgba(75, 192, 192, 0.6)' },
+      { borderColor: 'rgba(153, 102, 255, 1)', backgroundColor: 'rgba(153, 102, 255, 0.6)' },
+      { borderColor: 'rgba(255, 159, 64, 1)', backgroundColor: 'rgba(255, 159, 64, 0.6)' },
+    ];
+
     this.chart = new Chart("communicationChart", {
       type: 'bubble',
       data: {
-        labels: ['Survey 1', 'Survey 2', 'Survey 3', 'Survey 4', 'Survey 5', 'Survey 6'],
+        labels: ['Nursing', 'Psychology', 'General Practice', 'Administration', 'Emergency', 'Laboratory'],
         datasets: [
           {
-            label: 'Communication',
+            label: 'Communication Effectiveness',
             data: this.data.map((value, index) => ({
               x: index, // Use the index as the x-coordinate
               y: value, // Use the value as the y-coordinate
-              r: value/5, // Use the value as the radius of the bubble
+              r: value / 5, // Use the value as the radius of the bubble
             })),
-            borderColor: 'rgba(255, 99, 132, 1)',
-            backgroundColor: 'rgba(255, 99, 132, 0.6)',
+            borderColor: dataColors.map(color => color.borderColor),
+            backgroundColor: dataColors.map(color => color.backgroundColor),
             borderWidth: 2,
-            // fill: false,
           },
         ],
       },

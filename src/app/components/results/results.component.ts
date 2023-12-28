@@ -10,16 +10,17 @@ import { StressLevelGraphComponent } from '../stress-level-graph/stress-level-gr
 import { WorkloadGraphComponent } from '../workload-graph/workload-graph.component';
 import { TeamworkGraphComponent } from '../teamwork-graph/teamwork-graph.component';
 import { JobSecurityGraphComponent } from '../job-security-graph/job-security-graph.component';
+import { WelcomeCardComponent } from '../welcome-card/welcome-card.component';
 
 @Component({
   selector: 'app-results',
   standalone: true,
-  imports: [SatisfactionGraphComponent, BarChartComponent, CommunicationGraphComponent, StressLevelGraphComponent, WorkloadGraphComponent, TeamworkGraphComponent, JobSecurityGraphComponent, DoughnutChartComponent],
+  imports: [SatisfactionGraphComponent, BarChartComponent, CommunicationGraphComponent, StressLevelGraphComponent, WorkloadGraphComponent, TeamworkGraphComponent, JobSecurityGraphComponent, DoughnutChartComponent, WelcomeCardComponent],
   templateUrl: './results.component.html',
   styleUrl: './results.component.css'
 })
 export class ResultsComponent {
-   satisfactionData = surveyResults.satisfaction;
+  satisfactionData = surveyResults.satisfaction;
   workloadData = surveyResults.workload;
   stressLevelData = surveyResults.stressLevel;
   teamworkData = surveyResults.teamwork;
