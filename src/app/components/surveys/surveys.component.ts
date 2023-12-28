@@ -6,6 +6,7 @@ import { Chart } from 'chart.js';
 import { ChangeDetectorRef } from '@angular/core';
 import { DoughnutChartComponent } from '../doughnut-chart/doughnut-chart.component';
 import { WelcomeCardComponent } from '../welcome-card/welcome-card.component';
+import { RouterModule } from '@angular/router';
 
 
 interface Survey {
@@ -19,7 +20,7 @@ interface Survey {
 @Component({
   selector: 'app-surveys',
   standalone: true,
-  imports: [CommonModule, DoughnutChartComponent, WelcomeCardComponent],
+  imports: [CommonModule, DoughnutChartComponent, WelcomeCardComponent, RouterModule],
   templateUrl: './surveys.component.html',
   styleUrls: ['./surveys.component.css']
 })
@@ -35,30 +36,42 @@ export class SurveysComponent {
       return percentage + '%'
     }
   }
-
-
   
   getProgressBarColor(percentage: number): string {
   if (percentage === 0) {
     return 'bg-gray-300'; // Light gray for 0% completion
-  } else if (percentage >= 80) {
+  } else if (percentage === 100) {
     return 'bg-green-500';
-  } else if (percentage >= 20) {
+  }
+    else if (percentage >= 80) {
+    return 'bg-violet-400';
+  } else if (percentage >= 40) {
     return 'bg-teal-600';
-  } else {
+  } else if (percentage >= 20) {
+    return 'bg-yellow-500';
+  } 
+  else {
     return 'bg-red-500';
   }
 }
 
 
   getProgressTextColor(percentage: number): string {
-    if (percentage >= 80) {
-      return 'text-green-500';
-    } else if (percentage >= 20) {
-      return 'text-teal-600';
-    } else {
-      return 'text-red-500';
-    }
+    if (percentage === 0) {
+    return 'text-gray-400'; // Light gray for 0% completion
+  } else if (percentage === 100) {
+    return 'text-green-500';
+  }
+    else if (percentage >= 80) {
+    return 'text-violet-400';
+  } else if (percentage >= 40) {
+    return 'text-teal-600';
+  } else if (percentage >= 20) {
+    return 'text-yellow-500';
+  } 
+  else {
+    return 'text-red-500';
+  }
   }
   
    surveys: Survey[] = [];

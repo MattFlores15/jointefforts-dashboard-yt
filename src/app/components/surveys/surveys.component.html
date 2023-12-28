@@ -59,7 +59,7 @@
       <label for="surveyStatus" class="mr-2">Filter by Status:</label>
       <select
         id="surveyStatus"
-        class="p-2 border border-gray-300 rounded w-fit cursor-pointer"
+        class="p-2 border border-gray-300 rounded w-32 cursor-pointer"
         (change)="filterByStatus($event)"
       >
         <option value="To do">To Do</option>
@@ -74,41 +74,47 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <!-- Sample cards, replace with actual survey data using *ngFor -->
       <div *ngFor="let survey of filteredSurveys">
-        <div class="bg-white p-4 rounded-md shadow-md hover:shadow-violet-400">
-          <h2 class="text-lg font-semibold mb-2">{{ survey.title }}</h2>
-          <p class="text-gray-500">{{ survey.description }}</p>
-          <div class="mt-4 flex justify-between">
-            <span class="text-gray-600"
-              >Status:
-              <span [class.text-green-500]="survey.status === 'Completed'">
-                {{ survey.status }}</span
-              ></span
-            >
-            <span class="text-gray-600"
-              >Type: <span class="text-blue-500"> {{ survey.type }}</span></span
-            >
-          </div>
-          <!-- Add progress bar based on survey completion status -->
-          <div class="mt-4">
-            <div
-              [style.width.%]="survey.completionPercentage"
-              [ngClass]="getProgressBarColor(survey.completionPercentage)"
-              class="h-2 w-full rounded-md"
-            >
-              <!-- Set width dynamically based on completion percentage -->
-              <!-- <div
+        <a [routerLink]="['/individual-survey', survey.type.toLowerCase()]">
+          <div
+            class="bg-white p-4 rounded-md shadow-md hover:shadow-violet-400"
+          >
+            <h2 class="text-lg font-semibold mb-2">{{ survey.title }}</h2>
+            <p class="text-gray-500">{{ survey.description }}</p>
+            <div class="mt-4 flex justify-between">
+              <span class="text-gray-600"
+                >Status:
+                <span [class.text-green-500]="survey.status === 'Completed'">
+                  {{ survey.status }}</span
+                ></span
+              >
+              <span class="text-gray-600"
+                >Type:
+                <span class="text-blue-500"> {{ survey.type }}</span></span
+              >
+            </div>
+            <!-- Add progress bar based on survey completion status -->
+
+            <div class="mt-4">
+              <div
+                [style.width.%]="survey.completionPercentage"
+                [ngClass]="getProgressBarColor(survey.completionPercentage)"
+                class="h-2 w-full rounded-md"
+              >
+                <!-- Set width dynamically based on completion percentage -->
+                <!-- <div
                 [style.width]="getProgressBarWidth(survey.completionPercentage)"
                 class="h-full rounded-md"
               ></div> -->
-            </div>
-            <div
-              [ngClass]="getProgressTextColor(survey.completionPercentage)"
-              class="mt-2"
-            >
-              {{ survey.completionPercentage }}%
+              </div>
+              <div
+                [ngClass]="getProgressTextColor(survey.completionPercentage)"
+                class="mt-2"
+              >
+                {{ survey.completionPercentage }}%
+              </div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </div>
