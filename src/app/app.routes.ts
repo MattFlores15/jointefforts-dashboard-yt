@@ -33,7 +33,8 @@ export const AppRoutes: Routes = [
   { path: 'news-article', component: NewsArticleComponent },
   { path: 'support', component: SupportComponent },
   { path: 'support-answer', component: SupportAnswerComponent},
-  { path: 'individual-survey', component: IndividualSurveyComponent },
+  { path: 'individual-survey/:type', component: IndividualSurveyComponent },
+  { path: '', redirectTo: '/surveys', pathMatch: 'full' },
 
 ];
 

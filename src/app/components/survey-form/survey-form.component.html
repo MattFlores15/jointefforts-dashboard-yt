@@ -1,0 +1,14 @@
+<!-- survey-form.component.html -->
+
+<form class="bg-white p-6 rounded shadow" (ngSubmit)="submitSurvey()">
+  <div *ngFor="let question of surveyType.questions" class="mb-4">
+    <app-question [question]="question"></app-question>
+  </div>
+
+  <button
+    type="submit"
+    class="bg-violet-400 text-white px-4 py-2 rounded hover:bg-violet-400"
+  >
+    Submit Survey
+  </button>
+</form>

@@ -1,1 +1,22 @@
-<p>individual-survey works!</p>
+<!-- individual-survey.component.html -->
+
+<div class="w-full p-8">
+  <div class="container mx-auto my-8">
+    <h2 class="text-2xl font-bold mb-4">
+      Healthcare Professional Engagement Survey
+    </h2>
+
+    <ng-container *ngFor="let surveyType of surveyTypes">
+      <div
+        class="mb-8"
+        *ngIf="
+          surveyType.name.toLowerCase() === selectedSurveyType.toLowerCase()
+        "
+      >
+        <h3 class="text-xl font-semibold mb-2">{{ surveyType.name }} Survey</h3>
+
+        <app-survey-form [surveyType]="surveyType"></app-survey-form>
+      </div>
+    </ng-container>
+  </div>
+</div>

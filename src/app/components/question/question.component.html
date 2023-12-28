@@ -1,0 +1,14 @@
+<!-- question.component.html -->
+
+<div class="mb-4">
+  <label class="block text-sm font-medium text-gray-600">{{
+    question.text
+  }}</label>
+  <div class="mt-1">
+    <input
+      type="text"
+      [(ngModel)]="question.answer"
+      class="form-input w-full"
+    />
+  </div>
+</div>
