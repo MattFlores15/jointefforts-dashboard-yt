@@ -2,8 +2,14 @@
 .e-calendar {
     background-color: #C8F0FF;
     border: 3px solid #72D9FF;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 2px 2px 2px #888888;
+    height: 160px;
+    width: 300px;
+    max-width: 300px !important;
+    scroll-padding: 1px;
+    scrollbar-width: thin;
+    scrollbar-color: #72D9FF #C8F0FF;
 }
 
 /* To specify background color, color, and border */

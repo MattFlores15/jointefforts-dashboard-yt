@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { surveyResults } from '../../../assets/fakeData';
-import { SatisfactionGraphComponent } from '../satisfaction-graph/satisfaction-graph.component';
+
 import { BarChartComponent } from '../bar-chart/bar-chart.component';
 import { CommunicationGraphComponent } from '../communication-graph/communication-graph.component';
+
+import { DoughnutChartComponent } from '../doughnut-chart/doughnut-chart.component';
+import { SatisfactionGraphComponent } from '../satisfaction-graph/satisfaction-graph.component';
 import { StressLevelGraphComponent } from '../stress-level-graph/stress-level-graph.component';
 import { WorkloadGraphComponent } from '../workload-graph/workload-graph.component';
 import { TeamworkGraphComponent } from '../teamwork-graph/teamwork-graph.component';
 import { JobSecurityGraphComponent } from '../job-security-graph/job-security-graph.component';
-import { DoughnutChartComponent } from '../doughnut-chart/doughnut-chart.component';
 
 @Component({
   selector: 'app-results',
