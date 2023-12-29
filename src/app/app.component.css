@@ -1,0 +1,4 @@
+.hide-overflow{
+    overflow-x: hidden;
+    max-width: -moz-available;
+}

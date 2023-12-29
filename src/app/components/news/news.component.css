@@ -1,0 +1,11 @@
+.hide-verflow {
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+}

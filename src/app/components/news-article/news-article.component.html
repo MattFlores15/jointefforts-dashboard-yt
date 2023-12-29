@@ -1,55 +1,257 @@
 <!-- news-article.component.html -->
 
-<div class="container mx-auto my-8 p-10">
-  <h1 class="text-3xl font-bold mb-4">
+<div
+  class="container mx-auto p-10 rounded-md shadow-lg flex flex-col gap-4 justify-start"
+>
+  <div>
+    <button
+      routerLink="/news"
+      class="text-black bg-transparent border border-solid py-2 px-4 rounded hover:bg-violet-400 hover:text-white hover:border-transparent transition duration-200 ease-in-out h-fit"
+    >
+      <i class="fa-solid fa-angle-left"></i> Back
+    </button>
+  </div>
+  <h1 class="text-3xl font-bold mb-4 text-violet-400">
     From Data to Action: How Survey Feedback is Reshaping Healthcare Policies
   </h1>
 
-  <img
-    src="../../../assets/images/pexels-cottonbro-studio-7578802.jpg"
-    alt="Image 1"
-    class="mb-4 rounded-md shadow-md"
-  />
+  <div class="px-8">
+    <img
+      src="../../../assets/images/pexels-cottonbro-studio-7578802.jpg"
+      alt="Image 1"
+      class="mb-4 rounded-md shadow-md w-full h-96 object-cover object-center"
+    />
+  </div>
 
-  <p class="mb-4">
-    In a groundbreaking shift, healthcare institutions are turning survey data
-    into tangible actions that are reshaping policies and improving overall
-    patient care. The survey program, designed to address staffing challenges,
-    has evolved into a powerful tool driving positive changes across the
-    healthcare landscape. By translating insights gleaned from healthcare
-    professionals and administrators, institutions are implementing strategic
-    initiatives aimed at bolstering staff numbers and optimizing their
-    deployment.
-  </p>
+  <div class="px-20">
+    <p class="mb-4 text-gray-800">
+      In a groundbreaking shift, healthcare institutions are turning survey data
+      into tangible actions that are reshaping policies and improving overall
+      patient care. The survey program, designed to address staffing challenges,
+      has evolved into a powerful tool driving positive changes across the
+      healthcare landscape. By translating insights gleaned from healthcare
+      professionals and administrators, institutions are implementing strategic
+      initiatives aimed at bolstering staff numbers and optimizing their
+      deployment.
+    </p>
+  </div>
 
-  <img
-    src="../../../assets/images/pexels-tima-miroshnichenko-5452196.jpg"
-    alt="Image 2"
-    class="mb-4 rounded-md shadow-md"
-  />
+  <div class="px-14 flex justify-center">
+    <img
+      src="../../../assets/images/pexels-tima-miroshnichenko-5452196.jpg"
+      alt="Image 2"
+      class="mb-4 rounded-md shadow-md w-3/4"
+    />
+  </div>
 
-  <h2 class="text-2xl font-bold mb-2">Enhancing Patient Care</h2>
+  <div class="px-20">
+    <h2 class="text-2xl font-bold mb-2 text-violet-400">
+      Enhancing Patient Care
+    </h2>
 
-  <p class="mb-4">
-    Beyond staffing concerns, the survey insights are influencing policies that
-    directly impact patient care. Hospitals and healthcare facilities are
-    restructuring their operational frameworks to prioritize patient well-being.
-    The result is a more responsive and efficient healthcare system that not
-    only addresses staffing shortages but also enhances the overall quality of
-    care delivered to patients.
-  </p>
+    <p class="mb-4 text-gray-800">
+      Beyond staffing concerns, the survey insights are influencing policies
+      that directly impact patient care. Hospitals and healthcare facilities are
+      restructuring their operational frameworks to prioritize patient
+      well-being. The result is a more responsive and efficient healthcare
+      system that not only addresses staffing shortages but also enhances the
+      overall quality of care delivered to patients.
+    </p>
+  </div>
 
-  <h2 class="text-2xl font-bold mb-2">The Impact on Policy Implementation</h2>
+  <div class="px-20">
+    <h2 class="text-2xl font-bold mb-2 text-violet-400">
+      The Impact on Policy Implementation
+    </h2>
 
-  <p>
-    This transformative approach is evident in the implementation of
-    comprehensive policies that directly address the identified pain points
-    within healthcare staffing. For instance, some institutions have revised
-    recruitment processes, adopting innovative strategies to attract and retain
-    qualified personnel. Others are investing in ongoing training programs,
-    ensuring that staff members are equipped with the latest skills and
-    knowledge. The survey program's ability to pinpoint specific areas for
-    improvement has become instrumental in fostering a more resilient and
-    adaptable healthcare workforce.
-  </p>
+    <p class="text-gray-800">
+      This transformative approach is evident in the implementation of
+      comprehensive policies that directly address the identified pain points
+      within healthcare staffing. For instance, some institutions have revised
+      recruitment processes, adopting innovative strategies to attract and
+      retain qualified personnel. Others are investing in ongoing training
+      programs, ensuring that staff members are equipped with the latest skills
+      and knowledge. The survey program's ability to pinpoint specific areas for
+      improvement has become instrumental in fostering a more resilient and
+      adaptable healthcare workforce.
+    </p>
+  </div>
+  <!-- Comments Section -->
+  <div class="border-t-2 border-gray-300 mt-8 pt-6 px-10">
+    <h2 class="text-2xl font-bold mb-4 text-violet-400">Comments</h2>
+
+    <!-- Comment 1 -->
+    <div class="mb-4 w-full px-8 bg-gray-100 rounded-md py-4">
+      <div class="flex items-center mb-2">
+        <span class="font-bold mr-2">John Doe</span>
+        <span class="text-gray-600">- Department of Medicine</span>
+      </div>
+      <p class="text-gray-800 mb-2 px-6">
+        This article sheds light on a crucial aspect of healthcare
+        transformation. It's heartening to see survey data being used so
+        effectively to bring about positive changes. I hope other industries can
+        adopt similar strategies to address their challenges.
+      </p>
+
+      <!-- Reply Button -->
+      <button
+        class="text-violet-400 hover:underline"
+        (click)="toggleReply('comment1')"
+      >
+        Reply
+      </button>
+
+      <!-- Replies to Comment 1 -->
+      <div
+        *ngIf="showReply('comment1')"
+        class="ml-6 text-gray-600 bg-white shadow-sm shadow-gray-400 p-4 rounded-md"
+      >
+        <div class="flex items-center mb-2">
+          <span class="font-bold mr-2">Jane Smith</span>
+          <span class="text-gray-600">- Department of Nursing</span>
+        </div>
+        <p class="text-gray-800 mb-2 px-6">
+          Absolutely! The integration of data-driven insights into policy-making
+          seems like a game-changer. It's inspiring to witness the collaborative
+          efforts between healthcare professionals and institutions for the
+          greater good.
+        </p>
+      </div>
+    </div>
+
+    <!-- Comment 2 -->
+    <div class="mb-4 w-full px-8 bg-gray-100 rounded-md py-4">
+      <div class="flex items-center mb-2">
+        <span class="font-bold mr-2">Alice Johnson</span>
+        <span class="text-gray-600">- Department of Administration</span>
+      </div>
+      <p class="text-gray-800 mb-2 px-6">
+        Interesting read! How can I get involved in the survey program?
+      </p>
+
+      <!-- Reply Button -->
+      <button
+        class="text-violet-400 hover:underline"
+        (click)="toggleReply('comment2')"
+      >
+        Reply
+      </button>
+
+      <!-- Replies to Comment 2 -->
+      <div
+        *ngIf="showReply('comment2')"
+        class="ml-6 text-gray-600 bg-white shadow-sm shadow-gray-400 p-4 rounded-md"
+      >
+        <div class="flex items-center mb-2">
+          <span class="font-bold mr-2">Bob Turner</span>
+          <span class="text-gray-600">- Human Resources</span>
+        </div>
+        <p class="text-gray-800 mb-2 px-6">
+          Alice, you can do the next survey by clicking on the "Surveys" tab and
+          check the Weekly Survey.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add a Comment Form -->
+  <div class="mt-6 px-10 flex flex-col justify-start">
+    <h2 class="text-2xl font-bold mb-4 text-violet-400">Add a Comment</h2>
+    <!-- Form -->
+    <form class="w-1/2">
+      <div class="mb-4">
+        <label for="name" class="block text-gray-800 font-bold mb-2"
+          >Name</label
+        >
+        <input
+          type="text"
+          id="name"
+          name="name"
+          class="w-full p-2 border border-gray-300 rounded"
+          required
+        />
+      </div>
+
+      <div class="mb-4">
+        <label for="department" class="block text-gray-800 font-bold mb-2"
+          >Department</label
+        >
+        <input
+          type="text"
+          id="department"
+          name="department"
+          class="w-full p-2 border border-gray-300 rounded"
+          required
+        />
+      </div>
+
+      <div class="mb-4">
+        <label for="email" class="block text-gray-800 font-bold mb-2"
+          >Email</label
+        >
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="w-full p-2 border border-gray-300 rounded"
+          required
+        />
+      </div>
+
+      <div class="mb-4">
+        <label for="comment" class="block text-gray-800 font-bold mb-2"
+          >Comment</label
+        >
+        <textarea
+          id="comment"
+          name="comment"
+          rows="4"
+          class="w-full p-2 border border-gray-300 rounded"
+          required
+        ></textarea>
+      </div>
+
+      <div class="flex justify-between gap-4">
+        <button
+          type="submit"
+          class="bg-violet-400 text-white py-2 px-4 rounded h-fit"
+        >
+          Send Comment
+        </button>
+        <!-- Rate the Usefulness Section -->
+        <div class="self-center flex justify-start gap-4">
+          <h2 class="text-xl font-bold mb-4 text-violet-400">
+            Rate the Usefulness of the Article
+          </h2>
+
+          <div class="flex justify-start items-center gap-1 self-start mt-1">
+            <div
+              *ngIf="feedback !== 'thumbsDown'"
+              class="flex items-center cursor-pointer"
+              (click)="handleFeedback('thumbsUp')"
+              [ngClass]="{
+                'text-green-500': feedback === 'thumbsUp',
+                'text-gray-600': feedback !== 'thumbsUp'
+              }"
+            >
+              <i class="fas fa-thumbs-up text-xl mr-2"></i>
+              <span></span>
+            </div>
+            <div
+              *ngIf="feedback !== 'thumbsUp'"
+              class="flex items-center cursor-pointer"
+              (click)="handleFeedback('thumbsDown')"
+              [ngClass]="{
+                'text-red-500': feedback === 'thumbsDown',
+                'text-gray-600': feedback !== 'thumbsDown'
+              }"
+            >
+              <i class="fas fa-thumbs-down text-xl mr-2 fa-flip-horizontal"></i>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>

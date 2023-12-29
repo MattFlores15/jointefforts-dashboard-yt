@@ -1,18 +1,20 @@
 <div
-  class="flex justify-between items-start flex-col p-10 w-screen overflow-x-hidden scroll-mx-0 w-max-screen w-min-screen"
+  class="flex justify-between items-stretch flex-col gap-4 p-10 w-full overflow-x-hidden hide-verflow"
 >
-  <h2 class="text-3xl font-semibold mb-6">Joint Efforts News</h2>
+  <div class="p-4 text-white bg-violet-400 w-full rounded-md">
+    <h2 class="text-3xl font-bold">Your News</h2>
+  </div>
 
   <div
-    class="flex flex-col gap-10 justify-between items-start w-screen overflow-x-hidden scroll-mx-0"
+    class="flex flex-col gap-10 justify-between items-start w-full overflow-x-hidden scroll-mx-0"
   >
     <div
-      class="flex justify-between items-center gap-7 h-fit w-fit overflow-x-hidden"
+      class="flex justify-between items-center gap-5 h-full w-full overflow-x-hidden"
     >
       <!-- Article 1 - Vertical Card -->
-      <div class="col-span-2 lg:col-span-1">
+      <div class="col-span-2 lg:col-span-1 rounded-md p-2">
         <div
-          class="relative bg-sky-400 text-white p-0 rounded-md overflow-hidden w-72 h-96"
+          class="relative bg-sky-400 text-white p-0 rounded-md overflow-hidden w-80 h-96 shadow-md shadow-gray-500 hover:border-violet-400 hover:border-2 transition duration-300 ease-in-out"
         >
           <img
             src="../../../assets/images/pexels-rdne-stock-project-6129455.jpg"
@@ -22,11 +24,11 @@
           <div
             class="absolute bottom-0 text-black left-0 right-0 bg-white bg-opacity-75 p-4"
           >
-            <h3 class="text-xl font-semibold mb-3">
+            <h3 class="text-xl font-semibold mb-3 w-72 line-clamp-2">
               Revolutionizing Healthcare: Survey Program Alleviates Staff
               Shortages
             </h3>
-            <p class="text-sm">
+            <p class="text-sm line-clamp-2">
               Learn how a groundbreaking survey program is transforming the
               healthcare landscape by addressing staff shortages...
             </p>
@@ -35,9 +37,9 @@
       </div>
 
       <!-- Article 2 - Vertical Card -->
-      <div class="col-span-2 lg:col-span-1">
+      <div class="col-span-2 lg:col-span-1 rounded-md p-2">
         <div
-          class="relative bg-green-500 text-white p-0 rounded-md w-72 h-96 overflow-hidden"
+          class="relative bg-green-500 text-white p-0 rounded-md w-80 h-96 overflow-hidden shadow-md shadow-gray-500 hover:border-violet-400 hover:border-2 transition duration-300 ease-in-out"
         >
           <img
             src="../../../assets/images/pexels-tessy-agbonome-19131211.jpg"
@@ -47,7 +49,7 @@
           <div
             class="absolute bottom-0 text-black left-0 right-0 bg-white bg-opacity-75 p-4"
           >
-            <h3 class="text-xl font-semibold mb-3">
+            <h3 class="text-xl font-semibold mb-3 w-80 line-clamp-2">
               Survey Insights: Boosting Morale Among Healthcare Professionals
             </h3>
             <p class="text-sm">
@@ -59,9 +61,9 @@
       </div>
 
       <!-- Article 3 - Horizontal Card -->
-      <a routerLink="/news-article" class="col-span-2 lg:col-span-1">
+      <a routerLink="/news-article" class="col-span-2 lg:col-span-1 p-2">
         <div
-          class="relative bg-yellow-500 text-white p-0 rounded-md w-full h-96 overflow-hidden"
+          class="relative bg-yellow-500 text-white p-0 rounded-md w-full h-96 overflow-hidden shadow-md shadow-gray-500 hover:border-violet-400 hover:border-4 transition duration-300 ease-in-out"
         >
           <img
             src="../../../assets/images/pexels-cottonbro-studio-7578802.jpg"
@@ -71,7 +73,7 @@
           <div
             class="absolute bottom-0 text-black left-0 right-0 bg-white bg-opacity-75 p-4"
           >
-            <h3 class="text-xl font-semibold mb-3">
+            <h3 class="text-xl font-semibold mb-3 line-clamp-2">
               From Data to Action: How Survey Feedback is Reshaping Healthcare
               Policies
             </h3>
@@ -85,30 +87,66 @@
     </div>
 
     <!-- Articles 4-7 - Custom Slider -->
-    <!-- Slider Navigation -->
-    <div class="slider-navigation flex justify-evenly items-center gap-4">
-      <button (click)="slidePrev()" class="slider-button">Previous</button>
-      <button (click)="slideNext()" class="slider-button">Next</button>
-    </div>
-    <div
-      class="slider-container overflow-hidden max-w-screen-xl w-fit overflow-x-hidden scroll-mx-0"
-    >
+    <div class="flex flex-col justify-start gap-4">
+      <!-- Slider Navigation -->
       <div
-        class="flex items-start gap-5 transition-transform duration-300 ease-in-out w-fit max-w-fit min-w-fit overflow-x-hidden scroll-mx-0"
-        [style.transform]="'translateX(' + sliderPosition + ')'"
+        class="slider-navigation flex justify-start px-4 gap-4 text-2xl text-gray-500"
       >
-        <!--Cards-->
-        <div
-          *ngFor="let article of articles"
-          class="bg-gray-200 p-2 rounded-md h-96 w-72"
+        <p
+          class="text-lg text-sky-400 font-semibold flex justify-center items-center gap-2"
         >
-          <img
-            src="{{ article.image }}"
-            alt=""
-            class="w-full h-48 object-cover"
-          />
-          <h3 class="text-lg font-semibold mb-3">{{ article.title }}</h3>
-          <p class="text-sm">{{ article.summary }}</p>
+          <i class="fa-solid fa-fire-flame-curved text-violet-400"></i>Popular
+          Articles
+        </p>
+        <button
+          (click)="slidePrev()"
+          class="slider-button hover:text-violet-400"
+        >
+          <i class="fa-solid fa-caret-left"></i>
+        </button>
+        <button
+          (click)="slideNext()"
+          class="slider-button hover:text-violet-400"
+        >
+          <i class="fa-solid fa-caret-right"></i>
+        </button>
+      </div>
+      <div
+        class="slider-container overflow-hidden w-full overflow-x-hidden scroll-mx-0 shadow-md p-2"
+      >
+        <div
+          class="flex items-start gap-5 transition-transform duration-300 ease-in-out w-fit max-w-fit min-w-fit overflow-x-hidden scroll-mx-0 p-2"
+          [style.transform]="'translateX(' + sliderPosition + ')'"
+        >
+          <!--Cards-->
+          <div
+            *ngFor="let article of articles"
+            class="bg-white p-2 rounded-md h-96 w-80 flex flex-col justify-start gap-2 shadow-md shadow-gray-500 hover:border-violet-400 hover:border-2 transition duration-300 ease-in-out"
+          >
+            <img
+              src="{{ article.image }}"
+              alt=""
+              class="w-full h-48 object-cover rounded-md"
+            />
+            <div class="flex flex-col justify-start gap-1 p-3">
+              <h3 class="text-lg font-semibold mb-3 line-clamp-2">
+                {{ article.title }}
+              </h3>
+              <p class="text-sm line-clamp-2">{{ article.summary }}</p>
+            </div>
+            <div class="self-start px-2" (click)="toggleBookmark(article)">
+              <i
+                class="fa-regular fa-bookmark text-xl cursor-pointer"
+                [ngClass]="{
+                  'fa-regular': !article.bookmarked,
+                  'fa-solid': article.bookmarked,
+                  'text-xl': true,
+                  'text-gray-400': !article.bookmarked,
+                  'text-violet-400': article.bookmarked
+                }"
+              ></i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
