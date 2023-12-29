@@ -75,12 +75,12 @@ export class SurveysComponent {
   }
   
    surveys: Survey[] = [];
-  originalSurveys: Survey[] = []; // Original survey data for "Overview" tab
-  filteredSurveys: Survey[] = [];
-    isCompletedFilter: boolean = false;
-  currentSurveyType: string = '';
-  // Add a property to track the active tab
-activeTab: string = 'Overview';
+    originalSurveys: Survey[] = []; // Original survey data for "Overview" tab
+    filteredSurveys: Survey[] = [];
+      isCompletedFilter: boolean = false;
+    currentSurveyType: string = '';
+    // Add a property to track the active tab
+    activeTab: string = 'Overview';
 
 
   constructor(private cdRef: ChangeDetectorRef) {

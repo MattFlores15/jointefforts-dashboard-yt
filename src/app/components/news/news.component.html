@@ -1,14 +1,18 @@
 <div
-  class="flex justify-between items-start flex-col p-10 w-fit overflow-x-hidden"
+  class="flex justify-between items-start flex-col p-10 w-screen overflow-x-hidden scroll-mx-0 w-max-screen w-min-screen"
 >
   <h2 class="text-3xl font-semibold mb-6">Joint Efforts News</h2>
 
-  <div class="flex flex-col gap-10 justify-between items-start w-fit">
-    <div class="flex justify-between items-center gap-7 h-fit w-fit">
+  <div
+    class="flex flex-col gap-10 justify-between items-start w-screen overflow-x-hidden scroll-mx-0"
+  >
+    <div
+      class="flex justify-between items-center gap-7 h-fit w-fit overflow-x-hidden"
+    >
       <!-- Article 1 - Vertical Card -->
       <div class="col-span-2 lg:col-span-1">
         <div
-          class="relative bg-blue-500 text-white p-0 rounded-md overflow-hidden w-72 h-96"
+          class="relative bg-sky-400 text-white p-0 rounded-md overflow-hidden w-72 h-96"
         >
           <img
             src="../../../assets/images/pexels-rdne-stock-project-6129455.jpg"
@@ -80,11 +84,22 @@
       </a>
     </div>
 
-    <!-- Articles 4-7 - Slider -->
-    <ngx-slick-carousel class="slider" [config]="sliderConfig">
-      <div class="flex items-start justify-between w-fit gap-5">
+    <!-- Articles 4-7 - Custom Slider -->
+    <!-- Slider Navigation -->
+    <div class="slider-navigation flex justify-evenly items-center gap-4">
+      <button (click)="slidePrev()" class="slider-button">Previous</button>
+      <button (click)="slideNext()" class="slider-button">Next</button>
+    </div>
+    <div
+      class="slider-container overflow-hidden max-w-screen-xl w-fit overflow-x-hidden scroll-mx-0"
+    >
+      <div
+        class="flex items-start gap-5 transition-transform duration-300 ease-in-out w-fit max-w-fit min-w-fit overflow-x-hidden scroll-mx-0"
+        [style.transform]="'translateX(' + sliderPosition + ')'"
+      >
+        <!--Cards-->
         <div
-          *ngFor="let article of articles.slice(1 - 9)"
+          *ngFor="let article of articles"
           class="bg-gray-200 p-2 rounded-md h-96 w-72"
         >
           <img
@@ -96,6 +111,6 @@
           <p class="text-sm">{{ article.summary }}</p>
         </div>
       </div>
-    </ngx-slick-carousel>
+    </div>
   </div>
 </div>

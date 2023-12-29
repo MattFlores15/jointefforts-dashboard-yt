@@ -2,6 +2,8 @@ import { CommonModule, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { SlickCarouselComponent } from 'ngx-slick-carousel';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-news',
@@ -11,6 +13,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
   styleUrl: './news.component.css'
 })
 export class NewsComponent {
+     @ViewChild(SlickCarouselComponent) slickModal: SlickCarouselComponent | undefined;
+
   articles = [
     // Articles 4-7
     { image: "../../assets/images/pexels-juan-c-palacios-4069882.jpg" , title: "Nurturing Tomorrow's Healthcare Heroes: Survey Program's Focus on Training", summary: "Delve into the ways the survey program is contributing to the development of healthcare professionals..." },
@@ -23,20 +27,38 @@ export class NewsComponent {
     { image: "../../assets/images/pexels-rdne-stock-project-6129507.jpg", title: "Survey Program Success Stories: Real Impact on Healthcare Professionals", summary: "Hear firsthand accounts from healthcare workers whose lives have been positively influenced by the survey program..." },
   ];
 
-  sliderConfig = {
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    dots: true,
-    infinite: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+ // Custom slider logic
+  currentIndex = 0;
+  sliderPosition = '0px';
+  slideWidth = 288; // Adjust this based on the width of your card
+  maxIndex = 0;
+
+  slidePrev() {
+    this.currentIndex = Math.max(0, this.currentIndex - 1);
+    this.updateSliderPosition();
+  }
+
+  slideNext() {
+    this.currentIndex = Math.min(this.articles.length - 1, this.currentIndex + 1);
+    this.updateSliderPosition();
+  }
+
+  calculateSliderWidth(): number {
+    return this.articles.length * this.slideWidth;
+  }
+
+   updateSliderPosition() {
+    this.maxIndex = Math.max(0, this.articles.length - 1);
+    const containerWidth = this.maxIndex * this.slideWidth;
+    
+    if (this.currentIndex === this.maxIndex) {
+      // If it's the last card, align the slider to the right
+      this.sliderPosition = `-${containerWidth - this.slideWidth}px`;
+    } else {
+      // Otherwise, allow normal sliding
+      this.sliderPosition = `-${this.currentIndex * this.slideWidth}px`;
+    }
+  }
+
 
 }

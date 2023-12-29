@@ -26,6 +26,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@syncfusion/ej2-angular-calendars": "^24.1.43",
+    "@syncfusion/ej2-material-theme": "~24.1.43",
     "chart.js": "^4.4.1",
     "express": "^4.18.2",
     "jquery": "^3.7.1",
@@ -33,8 +34,7 @@
     "rxjs": "~7.8.0",
     "slick-carousel": "^1.8.1",
     "tslib": "^2.3.0",
-    "zone.js": "~0.14.2",
-    "@syncfusion/ej2-material-theme": "~24.1.43"
+    "zone.js": "~0.14.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.0.8",
