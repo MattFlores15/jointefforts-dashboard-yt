@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-onboarding1',
   standalone: true,
-  // imports: [],
+  imports: [RouterModule],
   templateUrl: './onboarding1.component.html',
   styleUrl: './onboarding1.component.css'
 })
