@@ -1,27 +1,29 @@
 <!-- individual-survey.component.html -->
 
 <div class="w-full p-4 relative">
-  <!-- Survey Progress Card -->
-  <div class="absolute top-0 right-0 mt-4 mr-4">
-    <div
-      class="flex items-center w-80 h-96 bg-white shadow-md border-2 border-gray-400"
-    >
-      <div class="bg-gray-300 w-20 h-2 rounded-md">
-        <!-- Adjust the inline width style dynamically based on the random progress percentage -->
-        <div
-          [style.width.%]="randomProgress"
-          class="bg-green-500 h-full rounded-md"
-        ></div>
-      </div>
-      <span class="ml-2">{{ randomProgress }}%</span>
-    </div>
-  </div>
-
   <div class="container mx-auto my-8 flex flex-col justify-start gap-2">
     <div class="p-4 text-white bg-violet-400 w-full rounded-md">
       <h2 class="text-3xl font-bold">
         Healthcare Professionals Engagement Survey
       </h2>
+    </div>
+
+    <!-- Survey Progress Card -->
+    <div class="mt-4 mr-4 self-end">
+      <div
+        class="flex flex-col items-center gap-1 w-80 h-20 p-2 bg-white shadow-md border-1 border-gray-300 rounded-md"
+      >
+        <h2 class="self-start font-semibold">Survey Progress</h2>
+        <div class="bg-gray-300 w-full h-2 rounded-md">
+          <!-- Adjust the inline width and background color dynamically based on the random progress percentage -->
+          <div
+            [style.width.%]="randomProgress"
+            [ngClass]="getProgressBarColor(randomProgress)"
+            class="w-full h-full rounded-md"
+          ></div>
+        </div>
+        <span class="ml-2 self-end">{{ randomProgress }}%</span>
+      </div>
     </div>
 
     <ng-container *ngFor="let surveyType of surveyTypes">

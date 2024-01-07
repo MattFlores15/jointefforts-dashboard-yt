@@ -27,4 +27,20 @@ export class IndividualSurveyComponent {
       this.selectedSurveyType = params['type'];
     });
   }
+
+  getProgressBarColor(percentage: number): string {
+    if (percentage === 0) {
+      return 'bg-gray-300'; // Light gray for 0% completion
+    } else if (percentage === 100) {
+      return 'bg-green-500';
+    } else if (percentage >= 80) {
+      return 'bg-violet-400';
+    } else if (percentage >= 40) {
+      return 'bg-teal-600';
+    } else if (percentage >= 20) {
+      return 'bg-yellow-500';
+    } else {
+      return 'bg-red-500';
+    }
+  }
 }
