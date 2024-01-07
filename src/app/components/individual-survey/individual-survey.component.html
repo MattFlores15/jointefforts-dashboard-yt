@@ -3,12 +3,14 @@
 <div class="w-full p-4 relative">
   <!-- Survey Progress Card -->
   <div class="absolute top-0 right-0 mt-4 mr-4">
-    <div class="flex items-center">
-      <div class="bg-gray-300 w-20 h-8 rounded-full">
+    <div
+      class="flex items-center w-80 h-96 bg-white shadow-md border-2 border-gray-400"
+    >
+      <div class="bg-gray-300 w-20 h-2 rounded-md">
         <!-- Adjust the inline width style dynamically based on the random progress percentage -->
         <div
           [style.width.%]="randomProgress"
-          class="bg-green-500 h-full rounded-full"
+          class="bg-green-500 h-full rounded-md"
         ></div>
       </div>
       <span class="ml-2">{{ randomProgress }}%</span>
