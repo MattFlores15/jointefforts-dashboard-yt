@@ -1,11 +1,14 @@
 /* results.component.css */
 /* Customize styles based on your design requirements */
 
+.news-results{
+    width: 600px;
+}
 
 /* Example card styling */
-.bg-white {
+/* .bg-white {
     background-color: #fff;
-}
+} */
 
 /* Example chart styling */
 .shadow-md {
