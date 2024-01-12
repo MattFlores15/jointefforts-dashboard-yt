@@ -1,53 +1,49 @@
 <!-- flowers.component.html -->
 <div class="container mx-auto p-8">
   <div
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-12"
   >
     <div *ngFor="let flower of flowers">
-      <a (click)="showModal(flower.id)" class="cursor-pointer">
-        <div [id]="flower.id">
-          <div
-            class="bg-white rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105"
-          >
-            <img
-              [src]="flower.image"
-              alt="{{ flower.name }} planted"
-              class="w-full h-auto object-cover"
-            />
-            <div class="p-4">
-              <p class="text-lg font-semibold">{{ flower.name }}</p>
-            </div>
+      <div class="relative">
+        <div
+          [id]="flower.id"
+          class="bg-transparent rounded-lg overflow-hidden shadow-md transition-transform transform flex flex-col justify-center items-center"
+          (mouseenter)="showModal(flower.id)"
+          (mouseleave)="hideModal()"
+        >
+          <img
+            [src]="flower.image"
+            alt="{{ flower.name }} planted"
+            class="w-40 h-auto object-cover"
+          />
+          <div class="p-4 w-full text-center">
+            <h3
+              class="text-lg font-semibold text-white bg-violet-400 w-full rounded-b-lg p-2"
+            >
+              {{ flower.name }}
+            </h3>
           </div>
         </div>
-      </a>
-    </div>
-  </div>
-</div>
-
-<div *ngFor="let flower of flowers">
-  <!-- Modal for Flower -->
-  <div
-    *ngIf="visibleFlowerId === flower.id"
-    class="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto"
-  >
-    <div class="fixed inset-0 bg-black opacity-50"></div>
-    <div
-      class="modal-container p-6 bg-white w-96 rounded-lg shadow-lg opacity-100 z-50 overflow-y-auto"
-    >
-      <span
-        class="absolute top-6 right-7 text-gray-600 cursor-pointer text-6xl"
-        (click)="hideModal()"
-        >&times;</span
-      >
-      <img
-        class="w-full h-auto object-cover mb-4 rounded-lg"
-        [src]="flower.image"
-        alt="{{ flower.name }}"
-      />
-      <p class="text-lg font-semibold mb-2">{{ flower.name }}</p>
-      <p class="text-gray-700">
-        {{ flower.description || "No description available" }}
-      </p>
+        <ng-container *ngIf="visibleFlowerId === flower.id">
+          <div class="pop-up-container" [@popUpAnimation]="visibleFlowerId">
+            <div
+              class="pop-up-content p-6 bg-green-700 w-64 h-fit rounded-lg shadow-lg z-50 overflow-y-auto flex flex-col justify-between items-center text-center relative"
+            >
+              <!-- <img
+                class="w-52 h-auto object-cover mb-4 rounded-lg"
+                [src]="flower.image"
+                alt="{{ flower.name }}"
+              /> -->
+              <h3 class="text-lg font-semibold mb-2 text-white">
+                {{ flower.name }}
+              </h3>
+              <p class="text-white">
+                {{ flower.description || "No description available" }}
+              </p>
+            </div>
+          </div>
+        </ng-container>
+      </div>
     </div>
   </div>
 </div>

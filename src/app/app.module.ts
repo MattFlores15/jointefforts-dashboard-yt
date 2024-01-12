@@ -9,6 +9,7 @@ import { CalendarModule} from '@syncfusion/ej2-angular-calendars';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     FormsModule, // or ReactiveFormsModule
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     SlickCarouselModule,
     CalendarModule,
     RouterModule,

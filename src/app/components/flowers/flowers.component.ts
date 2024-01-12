@@ -1,5 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 
 interface Flower {
   id: string;
@@ -11,9 +18,21 @@ interface Flower {
 @Component({
   selector: 'app-flowers',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,],
   templateUrl: './flowers.component.html',
-  styleUrls: ['./flowers.component.css']
+  styleUrls: ['./flowers.component.css'],
+   animations: [
+    trigger('popUpAnimation', [
+      state('*', style({ transform: 'scale(1)', opacity: 1 })),
+      transition(':enter', [
+        style({ transform: 'scale(0.5)', opacity: 0 }),
+        animate('300ms ease-in-out'),
+      ]),
+      transition(':leave', [
+        animate('300ms ease-in-out', style({ transform: 'scale(0.5)', opacity: 0 })),
+      ]),
+    ]),
+  ],
 })
 export class FlowersComponent {
 
