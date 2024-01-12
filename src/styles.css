@@ -7,7 +7,7 @@
 
 @fortawesome all.css;
 
-@import '~normalize.css';
+@import '../node_modules/normalize.css/normalize.css';
 
 @import "../node_modules/@ngx-slick-carousel/slick/slick.css";
 @import "../node_modules/@ngx-slick-carousel/slick/slick-theme.css";
