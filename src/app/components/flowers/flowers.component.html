@@ -1,13 +1,13 @@
 <!-- flowers.component.html -->
 <div class="container mx-auto p-8">
   <div
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-12"
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mt-8"
   >
     <div *ngFor="let flower of flowers">
       <div class="relative">
         <div
           [id]="flower.id"
-          class="bg-transparent rounded-lg overflow-hidden shadow-md transition-transform transform flex flex-col justify-center items-center"
+          class="bg-transparent rounded-lg overflow-hidden flex flex-col justify-center items-center w-full p-2"
           (mouseenter)="showModal(flower.id)"
           (mouseleave)="hideModal()"
         >
@@ -16,9 +16,9 @@
             alt="{{ flower.name }} planted"
             class="w-40 h-auto object-cover"
           />
-          <div class="p-4 w-full text-center">
+          <div class="w-full text-center flex items-center justify-center">
             <h3
-              class="text-lg font-semibold text-white bg-violet-400 w-full rounded-b-lg p-2"
+              class="text-lg font-semibold text-white bg-orange-900 w-44 rounded-b-lg p-2 py-4 shadow-md"
             >
               {{ flower.name }}
             </h3>
@@ -27,7 +27,7 @@
         <ng-container *ngIf="visibleFlowerId === flower.id">
           <div class="pop-up-container" [@popUpAnimation]="visibleFlowerId">
             <div
-              class="pop-up-content p-6 bg-green-700 w-64 h-fit rounded-lg shadow-lg z-50 overflow-y-auto flex flex-col justify-between items-center text-center relative"
+              class="pop-up-content p-6 bg-green-700 w-52 h-fit rounded-lg shadow-lg z-50 overflow-y-auto flex flex-col justify-between items-center text-center relative"
             >
               <!-- <img
                 class="w-52 h-auto object-cover mb-4 rounded-lg"
