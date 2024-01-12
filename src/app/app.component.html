@@ -6,8 +6,8 @@
     </div>
     <main
       role="main"
-      [style.margin-left.px]="shouldShowMarginLeft() ? 40 : 0"
       [ngClass]="{
+        'ml-40': shouldShowMarginLeft(),
         'mt-12': shouldShowMarginTop()
       }"
       class="overflow-x-hidden w-full hide-overflow flex"
