@@ -8,8 +8,8 @@ export class AuthService {
 
   login(username: string, password: string): boolean {
     // Replace the following lines with your actual login logic
-    const validUsername = 'user';
-    const validPassword = 'password';
+    const validUsername = '';
+    const validPassword = '';
 
     if (username === validUsername && password === validPassword) {
       this.isAuthenticated = true;
