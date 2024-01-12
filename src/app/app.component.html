@@ -1,18 +1,19 @@
 <div class="container-fluid">
   <div class="row">
     <app-top-navbar *ngIf="topNavbarVisible"></app-top-navbar>
-    <div *ngIf="sidebarVisible">
-      <app-sidebar></app-sidebar>
+    <div class="flex">
+      <div *ngIf="sidebarVisible" class="sidebar md:w-40">
+        <app-sidebar></app-sidebar>
+      </div>
+      <main
+        role="main"
+        [ngClass]="{
+          'mt-12': shouldShowMarginTop()
+        }"
+        class="overflow-x-hidden w-full hide-overflow main-content"
+      >
+        <router-outlet></router-outlet>
+      </main>
     </div>
-    <main
-      role="main"
-      [ngClass]="{
-        'ml-40': shouldShowMarginLeft(),
-        'mt-12': shouldShowMarginTop()
-      }"
-      class="overflow-x-hidden w-full hide-overflow flex"
-    >
-      <router-outlet></router-outlet>
-    </main>
   </div>
 </div>

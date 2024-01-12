@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule, Islamic } from '@syncfusion/ej2-angular-calendars';
 import { Router, NavigationEnd } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -49,7 +49,7 @@ export class AppComponent implements OnInit{
     this.topNavbarVisible = !excludedRoutes.includes(currentRoute);
   }
 
-  shouldShowMarginLeft(): boolean {
+  shouldShowPaddingLeft(): boolean {
   const excludedRoutes = ['/onboarding1', '/onboarding2', '/login'];
   const currentRoute = this.router.url;
   return !excludedRoutes.includes(currentRoute);
@@ -60,4 +60,10 @@ shouldShowMarginTop(): boolean {
   const currentRoute = this.router.url;
   return !excludedRoutes.includes(currentRoute);
 }
+
+@HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    // Handle window resize event, if needed
+    // You can update properties or perform other actions here
+  }
 }

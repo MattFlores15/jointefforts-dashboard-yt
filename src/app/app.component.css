@@ -1,5 +1,19 @@
 .hide-overflow{
     overflow-x: hidden;
     max-width: 100%;
+    width: 100%;
+}
+
+/* app.component.css */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+        /* Hide sidebar on small screens */
+    }
+
+    .main-content {
+        margin-left: 0;
+        /* Adjust margin as needed */
+    }
 }
 
