@@ -19,13 +19,13 @@ export class LoginComponent {
     constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit(): void {
-    const isAuthenticated = this.authService.login(this.username, this.password);
-
-    if (isAuthenticated) {
+    // const isAuthenticated = this.authService.login(this.username, this.password);
       this.router.navigate(['/homepage']);
-    } else {
-      // Handle unsuccessful login (optional)
-      console.log('Login failed');
-    }
+
+    // if (isAuthenticated) {
+    // } else {
+    //   // Handle unsuccessful login (optional)
+    //   console.log('Login failed');
+    // }
   }
 }
