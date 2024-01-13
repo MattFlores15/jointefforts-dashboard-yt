@@ -45,9 +45,10 @@
               <h3 class="text-lg font-semibold mb-2 text-white">
                 {{ flower.name }}
               </h3>
-              <p class="text-white">
-                {{ flower.description || "No description available" }}
-              </p>
+              <p
+                class="text-white"
+                [innerHTML]="flower.description || 'No description available'"
+              ></p>
             </div>
           </div>
         </ng-container>
