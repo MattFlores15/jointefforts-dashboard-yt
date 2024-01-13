@@ -40,9 +40,9 @@
         <ng-container *ngIf="visibleFlowerId === flower.id">
           <div class="pop-up-container" [@popUpAnimation]="visibleFlowerId">
             <div
-              class="pop-up-content w-80 p-6 bg-green-700 h-80 rounded-lg shadow-lg overflow-y-auto flex flex-col justify-evenly items-center text-center relative"
+              class="pop-up-content w-64 p-6 bg-green-700 h-80 rounded-lg shadow-lg overflow-y-auto flex flex-col justify-evenly items-center text-center relative"
             >
-              <h3 class="text-sm font-semibold text-violet-400">
+              <h3 class="text-lg font-semibold text-violet-400">
                 {{ flower.name }}
               </h3>
               <p
