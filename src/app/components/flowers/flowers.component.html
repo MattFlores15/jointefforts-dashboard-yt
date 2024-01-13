@@ -1,24 +1,30 @@
 <!-- flowers.component.html -->
-<div class="container mx-auto p-8">
+<div
+  class="container px-4 bg-cover bg-center relative w-screen h-full overflow-y-clip overflow-x-hidden touc"
+  style="background-image: url('../../../assets/images/plants/garden.jpg')"
+>
   <div
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mt-8"
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-8 w-full px-4"
   >
-    <div *ngFor="let flower of flowers">
+    <div *ngFor="let flower of flowers" class="w-fit">
       <div class="relative">
         <div
           [id]="flower.id"
-          class="bg-transparent rounded-lg overflow-hidden flex flex-col justify-center items-center w-full p-2"
+          class="bg-transparent rounded-lg overflow-hidden flex flex-col justify-center items-center w-fit p-2 mb-16"
           (mouseenter)="showModal(flower.id)"
           (mouseleave)="hideModal()"
         >
           <img
             [src]="flower.image"
             alt="{{ flower.name }} planted"
-            class="w-40 h-auto object-cover"
+            class="w-32 h-auto object-cover"
           />
           <div class="w-full text-center flex items-center justify-center">
             <h3
-              class="text-lg font-semibold text-white bg-orange-900 w-44 rounded-b-lg p-2 py-4 shadow-md"
+              class="text-lg font-semibold text-white bg-orange-900 w-44 rounded-b-lg p-2 py-4 shadow-md plant-pot"
+              style="
+                background-image: url('../../../assets/images/istockphoto-494640524-170667a.jpg');
+              "
             >
               {{ flower.name }}
             </h3>
