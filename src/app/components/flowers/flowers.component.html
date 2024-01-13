@@ -1,10 +1,17 @@
 <!-- flowers.component.html -->
+
 <div
-  class="container px-8 bg-cover bg-center relative w-full h-full overflow-x-hidden touc py-8 pb-14 flex flex-col justify-center items-center"
+  class="container px-8 bg-cover bg-center relative w-full h-full touc py-8 pb-14 flex flex-col justify-center items-center"
   style="background-image: url('../../../assets/images/plants/garden.jpg')"
 >
+  <!-- Header -->
+  <div class="px-4 w-full">
+    <div class="p-4 text-white bg-violet-400 w-full rounded-md">
+      <h2 class="text-3xl font-bold">Your Rewards</h2>
+    </div>
+  </div>
   <div
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16 mt-44 w-fit px-8 h-full"
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16 mt-44 w-fit px-4 h-full"
   >
     <div *ngFor="let flower of flowers" class="w-fit">
       <div class="relative">
