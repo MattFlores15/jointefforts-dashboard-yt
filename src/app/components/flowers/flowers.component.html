@@ -1,10 +1,10 @@
 <!-- flowers.component.html -->
 <div
-  class="container px-4 bg-cover bg-center relative w-screen h-full overflow-x-hidden touc"
+  class="container px-8 bg-cover bg-center relative w-full h-full overflow-x-hidden touc py-2 pb-14"
   style="background-image: url('../../../assets/images/plants/garden.jpg')"
 >
   <div
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-44 w-full px-10 h-full"
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-44 w-fit px-8 h-full"
   >
     <div *ngFor="let flower of flowers" class="w-fit">
       <div class="relative">
@@ -33,7 +33,7 @@
         <ng-container *ngIf="visibleFlowerId === flower.id">
           <div class="pop-up-container" [@popUpAnimation]="visibleFlowerId">
             <div
-              class="pop-up-content w-full p-6 bg-green-700 h-fit rounded-lg shadow-lg z-80 overflow-y-auto flex flex-col justify-between items-center text-center relative"
+              class="pop-up-content w-full p-6 bg-green-700 h-1/2 rounded-lg shadow-lg z-80 overflow-y-auto flex flex-col justify-between items-center text-center relative"
             >
               <h3 class="text-lg font-semibold mb-2 text-white">
                 {{ flower.name }}
