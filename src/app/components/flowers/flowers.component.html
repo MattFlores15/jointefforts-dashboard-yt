@@ -1,16 +1,16 @@
 <!-- flowers.component.html -->
 <div
-  class="container px-8 bg-cover bg-center relative w-full h-full overflow-x-hidden touc py-2 pb-14"
+  class="container px-8 bg-cover bg-center relative w-full h-full overflow-x-hidden touc py-8 pb-14 flex flex-col justify-center items-center"
   style="background-image: url('../../../assets/images/plants/garden.jpg')"
 >
   <div
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-44 w-fit px-8 h-full"
+    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16 mt-44 w-fit px-8 h-full"
   >
     <div *ngFor="let flower of flowers" class="w-fit">
       <div class="relative">
         <div
           [id]="flower.id"
-          class="bg-transparent rounded-lg overflow-hidden flex flex-col justify-center items-center w-fit p-2 mb-16"
+          class="bg-transparent rounded-lg overflow-hidden flex flex-col justify-center items-center w-fit p-2 mb-4"
           (mouseenter)="showModal(flower.id)"
           (mouseleave)="hideModal()"
         >
@@ -21,7 +21,7 @@
           />
           <div class="w-full text-center flex items-center justify-center">
             <h3
-              class="text-lg font-semibold text-white bg-orange-900 w-44 rounded-b-lg p-2 py-4 shadow-md plant-pot"
+              class="text-lg font-bold text-sky-300 bg-orange-900 w-44 rounded-b-lg p-2 py-4 shadow-md plant-pot"
               style="
                 background-image: url('../../../assets/images/istockphoto-494640524-170667a.jpg');
               "
