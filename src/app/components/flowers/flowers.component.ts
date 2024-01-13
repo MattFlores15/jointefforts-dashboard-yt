@@ -7,6 +7,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { RouterModule } from '@angular/router';
 
 interface Flower {
   id: string;
@@ -18,7 +19,7 @@ interface Flower {
 @Component({
   selector: 'app-flowers',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './flowers.component.html',
   styleUrls: ['./flowers.component.css'],
   animations: [
@@ -36,6 +37,8 @@ interface Flower {
 })
 export class FlowersComponent {
 
+
+
   flowers: Flower[] = [
     {
       id: 'sunflower',
@@ -43,7 +46,7 @@ export class FlowersComponent {
       image: '../../../assets/images/plants/sunflower-planted.png',
       description: `
         Deze plant heeft geholpen aan de 
-        <a href="/components/results/results.html"><b><u>maandelijkse vragenlijst.</b></u></a>
+        <a routerLink="../results/"><b><u>maandelijkse vragenlijst.</b></u></a>
         De resultaten van het onderzoek worden nog besproken en het gevolg hiervan kun je later bij de plant zien.
         <h2>Wist je dat?</h2>
         De bloemknoppen en jonge bloemen draaien langzaam mee met de zon als deze zich
@@ -58,7 +61,7 @@ export class FlowersComponent {
       image: '../../../assets/images/plants/rose-planted.png',
       description: `
         Deze plant heeft geholpen aan de 
-        <a href="/components/results/results.html"><b><u>wekelijkse vragenlijst.</b></u></a>
+        <a routerLink="../results/"><b><u>wekelijkse vragenlijst.</b></u></a>
         De resultaten van het onderzoek worden nog besproken en het gevolg hiervan kun je later bij de plant zien.
         <h2>Wist je dat?</h2>
         Wist je dat rozen in Nederland bekend zijn vanaf de zestiende
@@ -74,7 +77,7 @@ export class FlowersComponent {
       image: '../../../assets/images/plants/lavender-planted.png',
       description: `
         Deze plant heeft geholpen aan de 
-        <a href="/components/news-articles/results-article.html"><b><u>halfjaarlijkse vragenlijst.</b></u></a>
+        <a routerLink="../results/"><b><u>halfjaarlijkse vragenlijst.</b></u></a>
         De resultaten van het onderzoek zijn dat de vragenlijsten korter en leuker moeten, daarom ook deze applicatie.
         <h2>Wist je dat?</h2>
         Lavendel wordt door veel mensen gezien als medicinaal middel.
@@ -89,7 +92,7 @@ export class FlowersComponent {
       image: '../../../assets/images/plants/daisy-planted.png',
       description: `
         Deze plant heeft geholpen aan de 
-        <a href="/components/results/results.html"><b><u>wekelijkse vragenlijst.</b></u></a>
+        <a routerLink="../results/"><b><u>wekelijkse vragenlijst.</b></u></a>
         De resultaten van het onderzoek worden nog besproken en het gevolg hiervan kun je later bij de plant zien.
         <h2>Wist je dat?</h2>
         Madeliefjes symboliseren onschuld en puurheid. Ze worden vaak geassocieerd met
@@ -102,7 +105,7 @@ export class FlowersComponent {
       image: '../../../assets/images/plants/tulip-planted.png',
       description: `
         Deze plant heeft geholpen aan de 
-        <a href="/components/news-articles/results-article.html"><b><u>kwartaallijkse vragenlijst.</b></u></a>
+        <a routerLink="../results/"><b><u>kwartaallijkse vragenlijst.</b></u></a>
         De resultaten van het onderzoek zijn dat de vragenlijsten korter en leuker moeten, daarom ook deze applicatie.
         <h2>Wist je dat?</h2>
         Tulpen zijn oorspronkelijk afkomstig uit Turkije en werden in de 16e eeuw naar Nederland gebracht.
@@ -115,7 +118,7 @@ export class FlowersComponent {
       image: '../../../assets/images/plants/orchid-planted.png',
       description: `
         Deze plant heeft geholpen aan de 
-        <a href="/components/news-articles/results-article.html"><b><u>kwartaallijkse vragenlijst.</b></u></a>
+        <a routerLink="../results/"><b><u>kwartaallijkse vragenlijst.</b></u></a>
         De resultaten van het onderzoek zijn dat de vragenlijsten korter en leuker moeten, daarom ook deze applicatie.
         <h2>Wist je dat?</h2>
         Orchideeën zijn een van de grootste plantenfamilies ter wereld, met meer dan 25.000 soorten.
@@ -128,7 +131,7 @@ export class FlowersComponent {
       image: '../../../assets/images/plants/lily-planted.png',
       description: `
         Deze plant heeft geholpen aan de 
-        <a href="/components/results/results.html"><b><u>maandelijkse vragenlijst.</b></u></a>
+        <a routerLink="../results/"><b><u>maandelijkse vragenlijst.</b></u></a>
         De resultaten van het onderzoek worden nog besproken en het gevolg hiervan kun je later bij de plant zien.
         <h2>Wist je dat?</h2>
         Lelies symboliseren zuiverheid en majesteit. Ze worden vaak geassocieerd met
@@ -141,7 +144,7 @@ export class FlowersComponent {
       image: '../../../assets/images/plants/carnation-planted.png',
       description: `
         Deze plant heeft geholpen aan de 
-        <a href="/components/results/results.html"><b><u>wekelijkse vragenlijst.</b></u></a>
+        <a routerLink="../results/"><b><u>wekelijkse vragenlijst.</b></u></a>
         De resultaten van het onderzoek worden nog besproken en het gevolg hiervan kun je later bij de plant zien.
         <h2>Wist je dat?</h2>
         Anjers worden vaak geassocieerd met liefde en genegenheid. In verschillende kleuren
@@ -154,7 +157,7 @@ export class FlowersComponent {
       image: '../../../assets/images/plants/daffodil-planted.png',
       description: `
         Deze plant heeft geholpen aan de 
-        <a href="/components/news-articles/results-article.html"><b><u>halfjaarlijkse vragenlijst.</b></u></a>
+        <a routerLink="../results/"><b><u>halfjaarlijkse vragenlijst.</b></u></a>
         De resultaten van het onderzoek zijn dat de vragenlijsten korter en leuker moeten, daarom ook deze applicatie.
         <h2>Wist je dat?</h2>
         Narcissen worden vaak geassocieerd met lenteseizoen en symboliseren
@@ -167,7 +170,7 @@ export class FlowersComponent {
       image: '../../../assets/images/plants/cactus-planted.png',
       description: `
         Deze plant heeft geholpen aan de 
-        <a href="/components/news-articles/results-article.html"><b><u>kwartaallijkse vragenlijst.</b></u></a>
+        <a routerLink="../results/"><b><u>kwartaallijkse vragenlijst.</b></u></a>
         De resultaten van het onderzoek zijn dat de vragenlijsten korter en leuker moeten, daarom ook deze applicatie.
         <h2>Wist je dat?</h2>
         Cactussen staan bekend om hun vermogen om te overleven in droge omgevingen.

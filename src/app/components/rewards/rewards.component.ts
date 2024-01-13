@@ -9,5 +9,6 @@ import { FlowersComponent } from '../flowers/flowers.component';
   styleUrl: './rewards.component.css'
 })
 export class RewardsComponent {
+  
 
 }

@@ -2,9 +2,9 @@
 
 .pop-up-container {
     position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 95%;
+    left: 80%;
+    transform: translateY(-100%);
 }
 
 @keyframes fadeInOut {
