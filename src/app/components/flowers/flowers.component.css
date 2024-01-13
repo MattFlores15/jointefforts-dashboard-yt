@@ -5,6 +5,7 @@
     top: 95%;
     left: 80%;
     transform: translateY(-50%);
+    z-index: 100;
 }
 
 @keyframes fadeInOut {
