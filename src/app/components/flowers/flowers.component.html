@@ -1,8 +1,7 @@
 <!-- flowers.component.html -->
 
 <div
-  class="container px-8 bg-cover bg-center relative w-full h-full py-8 pb-80 flex flex-col justify-center items-center"
-  style="background-image: url('../../../assets/images/plants/garden.jpg')"
+  class="px-8 relative w-full h-full py-8 pb-80 flex flex-col justify-center items-center gap-4"
 >
   <!-- Header -->
   <div class="px-4 w-full">
@@ -10,19 +9,33 @@
       <h2 class="text-3xl font-bold">Your Rewards</h2>
     </div>
   </div>
+
+  <!-- Rewards -->
+  <div class="w-full p-2 px-4 flex items-center justify-center">
+    <div class="card rounded-md shadow-lg bg-sky-300 p-4 w-96">
+      <p class="text-white">
+        Deze plant heeft geholpen aan de
+        <a routerLink="/results">maandelijkse vragenlijst.</a> De resultaten van
+        het onderzoek worden nog besproken en het gevolg hiervan kun je later
+        bij de plant zien.
+      </p>
+    </div>
+  </div>
+
+  <!-- Flower Grid -->
   <div
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-16 mt-24 w-fit px-4 h-fit"
+    class="flex justify-between items-center flex-wrap gap-8 w-full px-20 h-fit bg-contain bg-center py-10 rounded-md shadow-md"
+    style="background-image: url('../../../assets/images/plants/garden.jpg')"
   >
     <div
       *ngFor="let flower of flowers"
-      class="w-fit"
       (mouseenter)="showModal(flower.id)"
       (mouseleave)="hideModal()"
     >
       <div class="relative">
         <div
           [id]="flower.id"
-          class="bg-transparent rounded-lg overflow-hidden flex flex-col justify-start items-center w-fit p-2 mb-4"
+          class="flex-grow bg-transparent rounded-lg overflow-hidden flex flex-col justify-start items-center w-fit p-2"
         >
           <img
             [src]="flower.image"
@@ -48,7 +61,7 @@
             (mouseleave)="setMouseOverPopup(false)"
           >
             <div
-              class="pop-up-content w-80 p-6 bg-green-700 h-80 rounded-lg shadow-xl overflow-y-auto flex flex-col justify-evenly items-center gap-4 text-center relative overflow-hidden"
+              class="pop-up-content w-72 p-6 bg-green-700 h-72 rounded-lg rounded-tl-none shadow-xl flex flex-col justify-start items-center gap-4 text-center relative overflow-hidden"
             >
               <div class="flex justify-evenly items-center gap-2 w-fit">
                 <img
@@ -61,12 +74,11 @@
                 </h2>
               </div>
               <div
-                class="text-white text-xs mb-2 popup-text flex flex-col justify-between items-center gap-2"
+                class="text-white text-xs mb-2 popup-text flex flex-col justify-between items-center gap-2 self-center"
               >
-                <p [innerHTML]="flower.helping"></p>
                 <h3
                   [innerHTML]="flower.question"
-                  class="text-sm font-semibold"
+                  class="text-sm font-semibold flex justify-center items-center gap-2 self-start"
                 ></h3>
                 <p
                   [innerHTML]="flower.description || 'No description available'"

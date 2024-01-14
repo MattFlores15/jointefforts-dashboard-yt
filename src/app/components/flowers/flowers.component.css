@@ -2,7 +2,7 @@
 
 .pop-up-container {
     position: absolute;
-    top: 180%;
+    top: 170%;
     left: 5%;
     transform: translateY(-50%);
     z-index: 100;
