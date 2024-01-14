@@ -1,5 +1,5 @@
-<div class="reward-container flex flex-col justify-between">
-  <div class="flex justify-between p-4">
+<div class="reward-container flex flex-col justify-between items-center w-full">
+  <div class="flex justify-between p-4 w-full">
     <!-- Header -->
     <div class="px-4 w-full">
       <div class="p-4 text-white bg-violet-400 w-full rounded-md">
@@ -9,15 +9,16 @@
   </div>
   <div class="flex justify-between items-start w-full p-6 px-8">
     <!-- Rewards -->
-    <div class="w-fit p-2 px-4 flex items-center justify-start">
+    <div class="w-fit p-2 px-4 flex items-start justify-start flex-col">
       <div class="card rounded-md shadow-lg bg-sky-300 p-4 w-96">
         <p class="text-white">
-          Deze plant heeft geholpen aan de
+          Deze bloemen hebben geholpen aan de
           <a routerLink="/results">maandelijkse vragenlijst.</a> De resultaten
           van het onderzoek worden nog besproken en het gevolg hiervan kun je
-          later bij de plant zien.
+          later bij de bloemen zien.
         </p>
       </div>
+      <app-flower-progress></app-flower-progress>
     </div>
     <app-news-card></app-news-card>
   </div>

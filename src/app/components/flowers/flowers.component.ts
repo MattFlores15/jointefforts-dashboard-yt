@@ -42,10 +42,14 @@ interface Flower {
 })
 export class FlowersComponent implements OnInit{
 
+  flowerCount: number = 0;
+
+
  // Function to determine initially unlocked flowers
 ngOnInit(): void {
     this.initializeFlowers();
     this.randomlyUnlockFlowers();
+    this.calculateFlowerCount();
   }
 
 initializeFlowers(): void {
@@ -106,9 +110,12 @@ randomlyUnlockFlowers(): void {
   randomlyUnlockedElements.forEach((flower) => {
     flower.unlocked = true;
   });
+   this.calculateFlowerCount();
 }
 
-
+ calculateFlowerCount(): void {
+    this.flowerCount = this.flowers.filter((flower) => flower.unlocked).length;
+  }
 
 
   // Shuffle array function
@@ -123,7 +130,6 @@ randomlyUnlockFlowers(): void {
     [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
   }
 
-  console.log(array); // Log the shuffled array
 
   return array;
 }

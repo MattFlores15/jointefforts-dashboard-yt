@@ -19,6 +19,7 @@ import { NewsArticleComponent } from './components/news-article/news-article.com
 import { SupportAnswerComponent } from './components/support-answer/support-answer.component';
 import { RewardsComponent } from './components/rewards/rewards.component';
 import { NewsCardComponent } from './components/news-card/news-card.component';
+import { FlowerProgressComponent } from './components/flower-progress/flower-progress.component';
 
 
 export const AppRoutes: Routes = [
@@ -39,6 +40,8 @@ export const AppRoutes: Routes = [
   { path: '', redirectTo: '/surveys', pathMatch: 'full' },
   { path: 'rewards', component: RewardsComponent },
   { path: 'rewards', component: NewsCardComponent },
+  { path: 'rewards', component: FlowerProgressComponent },
+
 
 ];
 

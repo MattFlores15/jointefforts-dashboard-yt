@@ -1,0 +1,25 @@
+<!-- flower-progress.component.html -->
+<div
+  class="flex flex-col items-center mt-8 rounded-md shadow-lg shadow-gray-100 p-4 bg-white border-2 border-gray-100 self-start"
+>
+  <!-- Progress bar section -->
+  <div class="progress-content mt-4 flex justify-evenly items-center gap-2">
+    <div
+      class="bar-container relative w-64 h-4 bg-gray-200 rounded-full flex items-center px-1"
+    >
+      <div
+        id="progress-bar"
+        class="bg-violet-400 h-2 rounded-full transition-all duration-500 ease-in-out"
+        [style.width]="progressWidth"
+      ></div>
+    </div>
+    <div class="progress-bar-amount text-base text-violet-400 self-end">
+      <p>{{ progressValue }}/10</p>
+    </div>
+  </div>
+
+  <!-- Text indicating progress towards the next badge -->
+  <div class="next-badge-text mt-2 text-sm text-violet-400 self-end">
+    <p>Onderzoeken tot de volgende badge...</p>
+  </div>
+</div>

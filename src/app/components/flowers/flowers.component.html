@@ -1,11 +1,18 @@
 <!-- flowers.component.html -->
 
 <div
-  class="relative w-full h-full flex flex-col justify-center items-center gap-4"
+  class="relative w-fit h-full flex flex-col justify-center items-center gap-4 p-8 rounded-md shadow-lg"
 >
+  <!-- Display earned flower badges -->
+  <div class="flowers-badge-count self-start px-8">
+    <h2 class="text-2xl font-bold text-violet-400">
+      Je hebt <span id="flowerCount">{{ flowerCount }}</span> bloemenbadges
+      verdiend!
+    </h2>
+  </div>
   <!-- Flower Grid -->
   <div
-    class="flex justify-between items-center flex-wrap gap-8 w-full px-28 h-full bg-contain bg-center pb-72 rounded-md shadow-md"
+    class="flex justify-between items-center flex-wrap gap-8 w-full h-full bg-contain bg-center pb-72 rounded-md shadow-lg p-10 border-2 border-gray-100"
     style="background-image: url('../../../assets/images/plants/garden.jpg')"
   >
     <div
