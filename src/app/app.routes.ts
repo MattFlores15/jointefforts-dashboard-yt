@@ -18,6 +18,7 @@ import { IndividualSurveyComponent } from './components/individual-survey/indivi
 import { NewsArticleComponent } from './components/news-article/news-article.component';
 import { SupportAnswerComponent } from './components/support-answer/support-answer.component';
 import { RewardsComponent } from './components/rewards/rewards.component';
+import { NewsCardComponent } from './components/news-card/news-card.component';
 
 
 export const AppRoutes: Routes = [
@@ -37,6 +38,8 @@ export const AppRoutes: Routes = [
   { path: 'individual-survey/:type', component: IndividualSurveyComponent },
   { path: '', redirectTo: '/surveys', pathMatch: 'full' },
   { path: 'rewards', component: RewardsComponent },
+  { path: 'rewards', component: NewsCardComponent },
+
 ];
 
 @NgModule({

@@ -1,3 +1,25 @@
-<div class="reward-container bg-cover bg-center relative h-full">
+<div class="reward-container flex flex-col justify-between">
+  <div class="flex justify-between p-4">
+    <!-- Header -->
+    <div class="px-4 w-full">
+      <div class="p-4 text-white bg-violet-400 w-full rounded-md">
+        <h2 class="text-3xl font-bold">Your Rewards</h2>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-between items-start w-full p-6 px-8">
+    <!-- Rewards -->
+    <div class="w-fit p-2 px-4 flex items-center justify-start">
+      <div class="card rounded-md shadow-lg bg-sky-300 p-4 w-96">
+        <p class="text-white">
+          Deze plant heeft geholpen aan de
+          <a routerLink="/results">maandelijkse vragenlijst.</a> De resultaten
+          van het onderzoek worden nog besproken en het gevolg hiervan kun je
+          later bij de plant zien.
+        </p>
+      </div>
+    </div>
+    <app-news-card></app-news-card>
+  </div>
   <app-flowers></app-flowers>
 </div>

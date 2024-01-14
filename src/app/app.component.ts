@@ -13,6 +13,7 @@ import { filter } from 'rxjs/operators';
 import { OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { NewsCardComponent } from './components/news-card/news-card.component';
 
 
 
@@ -21,7 +22,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
   selector: 'app-root',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule, CommonModule, RouterOutlet, TopNavbarComponent, SidebarComponent, FontAwesomeModule, FormsModule, ReactiveFormsModule, SlickCarouselModule],
+  imports: [CalendarModule, DatePickerModule, TimePickerModule, DateRangePickerModule, DateTimePickerModule, CommonModule, RouterOutlet, TopNavbarComponent, SidebarComponent, FontAwesomeModule, FormsModule, ReactiveFormsModule, SlickCarouselModule, NewsCardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
