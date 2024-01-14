@@ -2,8 +2,8 @@
 
 .pop-up-container {
     position: absolute;
-    top: 135%;
-    left: 65%;
+    top: 180%;
+    left: 5%;
     transform: translateY(-50%);
     z-index: 100;
 }
@@ -20,6 +20,10 @@
 
 .pop-up-content {
     animation: fadeInOut 0.3s ease;
+}
+
+.pop-up-content h2{
+    text-shadow: 1px 1px 1px #D0D0FF;
 }
 
 .pop-up-content.hidden {
