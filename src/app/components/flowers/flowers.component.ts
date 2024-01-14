@@ -48,54 +48,55 @@ ngOnInit(): void {
     this.randomlyUnlockFlowers();
   }
 
-  initializeFlowers(): void {
-    const initiallyUnlockedCount = 3;
-    const initiallyUnlockedFlowers: Flower[] = this.flowers
-      .filter((flower) => flower.initiallyUnlocked)
-      .slice(0, initiallyUnlockedCount);
+initializeFlowers(): void {
+  const initiallyUnlockedCount = 3;
+  const initiallyUnlockedFlowers: Flower[] = this.flowers
+    .filter((flower) => flower.initiallyUnlocked)
+    .slice(0, initiallyUnlockedCount);
 
-    const remainingSlotsCount = 10 - initiallyUnlockedFlowers.length;
-    const noFlowerSlots: Flower[] = Array.from({ length: remainingSlotsCount }, (_, index) => ({
-      id: `no-flower-${index + 1}`,
-      name: 'No flower',
-      image: '../../../assets/images/plants/no-planted.png',
-      badge: '../../../assets/images/plants/badges/no-badge.png',
-      description: `<p>Je hebt nog geen bloem geplant.</p>`,
-      unlocked: false,
-      initiallyUnlocked: false,
-    }));
+  const remainingSlotsCount = 13 - initiallyUnlockedFlowers.length;
+  const noFlowerSlots: Flower[] = Array.from({ length: remainingSlotsCount }, (_, index) => ({
+    id: `no-flower-${index + 1}`,
+    name: 'No flower',
+    image: '../../../assets/images/plants/no-planted.png',
+    badge: '../../../assets/images/plants/badges/no-badge.png',
+    description: `<p>Je hebt nog geen bloem geplant.</p>`,
+    unlocked: false,
+    initiallyUnlocked: false,
+  }));
 
-    const unlockableFlowers = this.flowers.filter(
-      (flower) =>
-        flower.id !== 'no-flower' &&
-        flower.id !== 'sunflower' &&
-        flower.id !== 'rose' &&
-        flower.id !== 'lavender' &&
-        !flower.unlocked &&
-        !flower.initiallyUnlocked
-    );
-
-    const randomlyUnlockedElements = this.shuffleArray(unlockableFlowers).slice(0, 2);
-
-    randomlyUnlockedElements.forEach((flower) => {
-      flower.unlocked = true;
-    });
-
-    this.flowers = initiallyUnlockedFlowers.concat(noFlowerSlots);
-  }
-
-
-  // Function to randomly unlock 2 "Flower" elements
- randomlyUnlockFlowers(): void {
   const unlockableFlowers = this.flowers.filter(
     (flower) =>
       !flower.id.startsWith('no-flower') &&
       flower.id !== 'sunflower' &&
       flower.id !== 'rose' &&
       flower.id !== 'lavender' &&
-      !flower.unlocked
+      (!flower.unlocked || flower.initiallyUnlocked) &&
+      !flower.initiallyUnlocked
   );
 
+  const randomlyUnlockedElements = this.shuffleArray(unlockableFlowers).slice(0, 2);
+
+  // Combine initially unlocked flowers, no flower slots, and randomly unlocked flowers
+  this.flowers = initiallyUnlockedFlowers.concat(noFlowerSlots, randomlyUnlockedElements);
+
+  // Shuffle the entire array to randomize the positions
+  this.shuffleArray(this.flowers);
+}
+
+
+randomlyUnlockFlowers(): void {
+  const unlockableFlowers = this.flowers.filter(
+    (flower) =>
+      !flower.id.startsWith('no-flower') &&
+      flower.id !== 'sunflower' &&
+      flower.id !== 'rose' &&
+      flower.id !== 'lavender' &&
+      (!flower.unlocked || flower.initiallyUnlocked) &&
+      !flower.initiallyUnlocked
+  );
+
+  console.log('All Flowers:', this.flowers);
   console.log('Unlockable Flowers:', unlockableFlowers);
 
   const randomlyUnlockedElements = this.shuffleArray(unlockableFlowers).slice(0, 2);
@@ -105,9 +106,10 @@ ngOnInit(): void {
   randomlyUnlockedElements.forEach((flower) => {
     flower.unlocked = true;
   });
-
-  console.log('Updated Flowers Array:', this.flowers);
 }
+
+
+
 
   // Shuffle array function
   shuffleArray<T>(array: T[]): T[] {
