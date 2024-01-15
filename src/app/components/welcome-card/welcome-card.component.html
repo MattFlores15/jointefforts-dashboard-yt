@@ -23,13 +23,20 @@
         class="flower-count flex justify-between items-center gap-2 text-white"
       >
         <p class="text-lg w-52">Je hebt bloemenbadges verdiend!</p>
-        <span id="rewardUnlocked"></span>
-        <div class="welcome-image w-24">
-          <img
-            class="w-full h-auto"
-            src="../../../assets/images/plants/badges/flower.png"
-            alt=""
-          />
+
+        <div class="welcome-image w-28 flex items-center justify-center">
+          <span
+            id="rewardUnlocked"
+            class="absolute text-6xl text-violet-400 font-bold"
+            >{{ flowerCount }}</span
+          >
+          <ng-container *ngIf="randomBadge">
+            <img
+              class="w-full h-auto"
+              [src]="randomBadge.image"
+              alt="{{ randomBadge.name }}"
+            />
+          </ng-container>
         </div>
       </div>
     </div>

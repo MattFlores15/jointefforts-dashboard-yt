@@ -8,6 +8,7 @@ import {
   transition,
 } from '@angular/animations';
 import { RouterModule } from '@angular/router';
+import { BadgeService } from '../services/badge.service';
 
 interface Flower {
   id: string;
@@ -41,6 +42,9 @@ interface Flower {
   ],
 })
 export class FlowersComponent implements OnInit{
+
+constructor(private badgeService: BadgeService) {}
+
 
   flowerCount: number = 0;
 
@@ -113,9 +117,11 @@ randomlyUnlockFlowers(): void {
    this.calculateFlowerCount();
 }
 
- calculateFlowerCount(): void {
-    this.flowerCount = this.flowers.filter((flower) => flower.unlocked).length;
-  }
+
+calculateFlowerCount(): void {
+  this.flowerCount = this.flowers.filter((flower) => flower.unlocked).length;
+  this.badgeService.updateFlowerCount(this.flowerCount);
+}
 
 
   // Shuffle array function
