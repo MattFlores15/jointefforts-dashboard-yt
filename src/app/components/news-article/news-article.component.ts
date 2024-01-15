@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-news-article',
@@ -10,6 +11,14 @@ import { RouterModule } from '@angular/router';
   styleUrl: './news-article.component.css'
 })
 export class NewsArticleComponent {
+
+  // Inject the Location service
+  constructor(private location: Location) {}
+
+  // Function to go back to the previous page
+  goBack(): void {
+    this.location.back();
+  }
 
    // Add properties to manage reply visibility
   showReplyComment1: boolean = false;

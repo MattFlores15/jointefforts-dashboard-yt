@@ -7,6 +7,7 @@ import { ChangeDetectorRef } from '@angular/core';
 import { DoughnutChartComponent } from '../doughnut-chart/doughnut-chart.component';
 import { WelcomeCardComponent } from '../welcome-card/welcome-card.component';
 import { RouterModule } from '@angular/router';
+import { ProgressCardComponent } from '../progress-card/progress-card.component';
 
 
 interface Survey {
@@ -20,7 +21,7 @@ interface Survey {
 @Component({
   selector: 'app-surveys',
   standalone: true,
-  imports: [CommonModule, DoughnutChartComponent, WelcomeCardComponent, RouterModule],
+  imports: [CommonModule, DoughnutChartComponent, WelcomeCardComponent, RouterModule, ProgressCardComponent],
   templateUrl: './surveys.component.html',
   styleUrls: ['./surveys.component.css']
 })
@@ -97,21 +98,11 @@ export class SurveysComponent {
 
 
    generateSampleData() {
-    // Display 6 completed cards of different categories
-    for (let i = 0; i < 6; i++) {
-      this.surveys.push({
-        title: `Completed Survey ${i + 1}`,
-        description: `Description ${i + 1}`,
-        type: i % 3 === 0 ? 'Weekly' : (i % 3 === 1 ? 'Monthly' : 'Biannual'),
-        status: 'Completed',
-        completionPercentage: 100
-      });
-    }
 
     // Display 3 To Do Weekly, 5 To Do Monthly, and 2 To Do Biannual with varied completion percentages
     for (let i = 0; i < 3; i++) {
-      // Introduce cards with 0%, 35%, 80%, or 55% completion
-      const completionPercentages = [0, 35, 80, 55];
+      // Introduce cards with different pecentages of completion
+      const completionPercentages = [0, 19, 85, 55, 35];
       const randomIndex = Math.floor(Math.random() * completionPercentages.length);
       const randomPercentage = completionPercentages[randomIndex];
 
@@ -125,8 +116,8 @@ export class SurveysComponent {
     }
 
     for (let i = 0; i < 5; i++) {
-      // Introduce cards with 0%, 35%, 80%, or 55% completion
-      const completionPercentages = [0, 35, 80, 55];
+      // Introduce cards with different pecentages of completion
+      const completionPercentages = [0, 19, 85, 55, 35];
       const randomIndex = Math.floor(Math.random() * completionPercentages.length);
       const randomPercentage = completionPercentages[randomIndex];
 
@@ -140,8 +131,8 @@ export class SurveysComponent {
     }
 
     for (let i = 0; i < 2; i++) {
-      // Introduce cards with 0%, 35%, 80%, or 55% completion
-      const completionPercentages = [0, 35, 80, 55];
+      // Introduce cards with different pecentages of completion
+      const completionPercentages = [0, 19, 85, 55, 35];
       const randomIndex = Math.floor(Math.random() * completionPercentages.length);
       const randomPercentage = completionPercentages[randomIndex];
 
@@ -151,6 +142,17 @@ export class SurveysComponent {
         type: 'Biannual',
         status: 'To do',
         completionPercentage: randomPercentage // Random completion percentage
+      });
+    }
+
+    // Display 6 completed cards of different categories
+    for (let i = 0; i < 6; i++) {
+      this.surveys.push({
+        title: `Completed Survey ${i + 1}`,
+        description: `Description ${i + 1}`,
+        type: i % 3 === 0 ? 'Weekly' : (i % 3 === 1 ? 'Monthly' : 'Biannual'),
+        status: 'Completed',
+        completionPercentage: 100
       });
     }
   }

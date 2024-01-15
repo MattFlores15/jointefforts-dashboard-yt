@@ -10,30 +10,36 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./doughnut-chart.component.css']
 })
 export class DoughnutChartComponent {
-  public chart: any;
+ public chart: any;
 
   createChart() {
-    const labels = ['Weekly', 'Monthly', 'Biannual'];
-    const data = [35, 45, 20];
+    const labels = ['Wekelijks', 'Maandelijks', 'Halfjaarlijks'];
+    const data = [80, 35, 50];
     const total = data.reduce((acc, value) => acc + value, 0);
-    const percentages = data.map(value => Math.round((value / total) * 100));
 
     this.chart = new Chart("MyChart", {
-      type: 'doughnut',
+      type: 'bar',
       data: {
-        labels: labels.map((label, index) => `${label} ${percentages[index]}%`), // Combine labels and percentages
+        labels: labels,
         datasets: [{
-          label: 'My First Dataset',
+          label: 'Tot nieuwe badge',
           data: data,
           backgroundColor: ['#14A38B', '#F2AC57', '#9A9AFF'],
-          hoverOffset: 4
         }],
       },
       options: {
-        aspectRatio: 2.5,
+        responsive: true,
+        indexAxis: 'y',
+        aspectRatio: 2,
+        scales: {
+          x: {
+            max: 100,
+            min: 0,
+          }
+        },
         plugins: {
           legend: {
-            position: 'left',
+            position: 'top', 
           },
           tooltip: {
             callbacks: {
@@ -48,8 +54,8 @@ export class DoughnutChartComponent {
         },
         layout: {
           padding: {
-            left: 10, // Adjust the left padding to make space for the legend
-            right: 0,
+            left: 10,
+            right: 10, 
             top: 0,
             bottom: 0,
           },

@@ -12,11 +12,12 @@ import { TeamworkGraphComponent } from '../teamwork-graph/teamwork-graph.compone
 import { JobSecurityGraphComponent } from '../job-security-graph/job-security-graph.component';
 import { WelcomeCardComponent } from '../welcome-card/welcome-card.component';
 import { RouterModule } from '@angular/router';
+import { ProgressCardComponent } from '../progress-card/progress-card.component';
 
 @Component({
   selector: 'app-results',
   standalone: true,
-  imports: [SatisfactionGraphComponent, BarChartComponent, CommunicationGraphComponent, StressLevelGraphComponent, WorkloadGraphComponent, TeamworkGraphComponent, JobSecurityGraphComponent, DoughnutChartComponent, WelcomeCardComponent, RouterModule],
+  imports: [SatisfactionGraphComponent, BarChartComponent, CommunicationGraphComponent, StressLevelGraphComponent, WorkloadGraphComponent, TeamworkGraphComponent, JobSecurityGraphComponent, DoughnutChartComponent, WelcomeCardComponent, RouterModule, ProgressCardComponent],
   templateUrl: './results.component.html',
   styleUrl: './results.component.css'
 })
