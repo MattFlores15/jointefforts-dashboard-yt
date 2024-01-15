@@ -4,7 +4,7 @@
     border: 3px solid #72D9FF;
     border-radius: 10px;
     box-shadow: 2px 2px 2px #888888;
-    height: 160px;
+    height: fit-content;
     width: 300px;
     max-width: 300px !important;
     scroll-padding: 1px;

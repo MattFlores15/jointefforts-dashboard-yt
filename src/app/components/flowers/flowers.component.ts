@@ -162,9 +162,9 @@ mouseOverPopup: boolean = false;
       name: 'Sunflower',
       image: '../../../assets/images/plants/sunflower-planted.png',
       badge:'../../../assets/images/plants/badges/sunflower.png',
-      explanation: 'Deze bloemen hebben geholpen aan de <a routerLink="/results">maandelijkse vragenlijst.</a> De resultaten van het onderzoek worden nog besproken en het gevolg hiervan kun je later bij de bloemen zien.',
+      explanation: 'Deze zonnebloem vertegenwoordigt deelname aan de <a routerLink="/results">maandelijkse vragenlijst</a> over het effect van personeelstekorten in de gezondheidszorg. De resultaten van jouw bijdrage worden nog besproken, en de impact zal later zichtbaar zijn bij deze zonnebloem.',
       question: '<i class="fa-solid fa-book"></i><h2>Wist je dat?</h2>',
-      description: '<p>De bloemknoppen en jonge bloemen draaien langzaam mee met de zon als <p>deze zich verplaatst van oost naar west. De zonnebloem bloeit op grote hoogte. Sommige soorten kunnen wel 3 meter hoog worden.</p>' ,
+      description: '<p>De bloemknoppen en jonge bloemen draaien langzaam mee met de zon als deze zich verplaatst van oost naar west. De zonnebloem bloeit op grote hoogte. Sommige soorten kunnen wel 3 meter hoog worden.</p>' ,
       unlocked: true,
       initiallyUnlocked: true,
     },
@@ -173,7 +173,7 @@ mouseOverPopup: boolean = false;
       name: 'Rose',
       image: '../../../assets/images/plants/rose-planted.png',
       badge:'../../../assets/images/plants/badges/flower2.png',
-      explanation: 'Deze bloemen hebben geholpen aan de <a routerLink="/results">maandelijkse vragenlijst.</a> De resultaten van het onderzoek worden nog besproken en het gevolg hiervan kun je later bij de bloemen zien.',
+      explanation: 'Deze roos vertegenwoordigt deelname aan de <a routerLink="/results">maandelijkse vragenlijst</a> over het effect van personeelstekorten in de gezondheidszorg. De resultaten van jouw bijdrage worden nog besproken, en de impact zal later zichtbaar zijn bij deze roos.',
       question: '<i class="fa-solid fa-book"></i><h2>Wist je dat?</h2>',
       description: `
         <p>Wist je dat rozen in Nederland bekend zijn vanaf de zestiende
@@ -190,7 +190,7 @@ mouseOverPopup: boolean = false;
       name: 'Lavender',
       image: '../../../assets/images/plants/lavender-planted.png',
       badge:'../../../assets/images/plants/badges/lavender.png',
-      explanation: 'Deze bloemen hebben geholpen aan de <a routerLink="/results">maandelijkse vragenlijst.</a> De resultaten van het onderzoek worden nog besproken en het gevolg hiervan kun je later bij de bloemen zien.',
+      explanation: 'Deze lavendel vertegenwoordigt deelname aan de <a routerLink="/results">maandelijkse vragenlijst</a> over het effect van personeelstekorten in de gezondheidszorg. De resultaten van jouw bijdrage worden nog besproken, en de impact zal later zichtbaar zijn bij deze lavendel.',
       question: '<i class="fa-solid fa-book"></i><h2>Wist je dat?</h2>',
       description: `
         <p>Lavendel wordt door veel mensen gezien als medicinaal middel.
@@ -201,12 +201,12 @@ mouseOverPopup: boolean = false;
       unlocked: true,
       initiallyUnlocked: true,
     },
-    {
+   {
       id: 'daisy',
       name: 'Daisy',
       image: '../../../assets/images/plants/daisy-planted.png',
       badge:'../../../assets/images/plants/badges/daisy.png',
-      explanation: 'Deze bloemen hebben geholpen aan de <a routerLink="/results">maandelijkse vragenlijst.</a> De resultaten van het onderzoek worden nog besproken en het gevolg hiervan kun je later bij de bloemen zien.',
+      explanation: 'Deze madelief vertegenwoordigt deelname aan de <a routerLink="/results">maandelijkse vragenlijst</a> over het effect van personeelstekorten in de gezondheidszorg. De resultaten van jouw bijdrage worden nog besproken, en de impact zal later zichtbaar zijn bij deze madelief.',
       question: '<i class="fa-solid fa-book"></i><h2>Wist je dat?</h2>',
       description: `
         <p>Madeliefjes symboliseren onschuld en puurheid. Ze worden vaak geassocieerd met
@@ -220,7 +220,7 @@ mouseOverPopup: boolean = false;
       name: 'Tulip',
       image: '../../../assets/images/plants/tulip-planted.png',
       badge:'../../../assets/images/plants/badges/tulip.png',
-      explanation: 'Deze bloemen hebben geholpen aan de <a routerLink="/results">maandelijkse vragenlijst.</a> De resultaten van het onderzoek worden nog besproken en het gevolg hiervan kun je later bij de bloemen zien.',
+      explanation: 'Deze tulp vertegenwoordigt deelname aan de <a routerLink="/results">maandelijkse vragenlijst</a> over het effect van personeelstekorten in de gezondheidszorg. De resultaten van jouw bijdrage worden nog besproken, en de impact zal later zichtbaar zijn bij deze tulp.',
       question: '<i class="fa-solid fa-book"></i><h2>Wist je dat?</h2>',
       description: `
         <p>Tulpen zijn oorspronkelijk afkomstig uit Turkije en werden in de 16e eeuw naar Nederland gebracht.
@@ -234,7 +234,7 @@ mouseOverPopup: boolean = false;
       name: 'Orchid',
       image: '../../../assets/images/plants/orchid-planted.png',
       badge:'../../../assets/images/plants/badges/orchid.png',
-      explanation: 'Deze bloemen hebben geholpen aan de <a routerLink="/results">maandelijkse vragenlijst.</a> De resultaten van het onderzoek worden nog besproken en het gevolg hiervan kun je later bij de bloemen zien.',
+      explanation: 'Deze orchidee vertegenwoordigt deelname aan de <a routerLink="/results">maandelijkse vragenlijst</a> over het effect van personeelstekorten in de gezondheidszorg. De resultaten van jouw bijdrage worden nog besproken, en de impact zal later zichtbaar zijn bij deze orchidee.',
       question: '<i class="fa-solid fa-book"></i><h2>Wist je dat?</h2>',
       description: `
         <p>Orchideeën zijn een van de grootste plantenfamilies ter wereld, met meer dan 25.000 soorten.
@@ -248,7 +248,7 @@ mouseOverPopup: boolean = false;
       name: 'Lily',
       image: '../../../assets/images/plants/lily-planted.png',
       badge:'../../../assets/images/plants/badges/lily.png',
-      explanation: 'Deze bloemen hebben geholpen aan de <a routerLink="/results">maandelijkse vragenlijst.</a> De resultaten van het onderzoek worden nog besproken en het gevolg hiervan kun je later bij de bloemen zien.',
+      explanation: 'Deze lelie vertegenwoordigt deelname aan de <a routerLink="/results">maandelijkse vragenlijst</a> over het effect van personeelstekorten in de gezondheidszorg. De resultaten van jouw bijdrage worden nog besproken, en de impact zal later zichtbaar zijn bij deze lelie.',
       question: '<i class="fa-solid fa-book"></i><h2>Wist je dat?</h2>',
       description: `
         <p>Lelies symboliseren zuiverheid en majesteit. Ze worden vaak geassocieerd met
@@ -262,7 +262,7 @@ mouseOverPopup: boolean = false;
       name: 'Carnation',
       image: '../../../assets/images/plants/carnation-planted.png',
       badge:'../../../assets/images/plants/badges/carnation.png',
-      explanation: 'Deze bloemen hebben geholpen aan de <a routerLink="/results">maandelijkse vragenlijst.</a> De resultaten van het onderzoek worden nog besproken en het gevolg hiervan kun je later bij de bloemen zien.',
+      explanation: 'Deze anjer vertegenwoordigt deelname aan de <a routerLink="/results">maandelijkse vragenlijst</a> over het effect van personeelstekorten in de gezondheidszorg. De resultaten van jouw bijdrage worden nog besproken, en de impact zal later zichtbaar zijn bij deze anjer.',
       question: '<i class="fa-solid fa-book"></i><h2>Wist je dat?</h2>',
       description: `
         <p>Anjers worden vaak geassocieerd met liefde en genegenheid. In verschillende kleuren
@@ -276,26 +276,28 @@ mouseOverPopup: boolean = false;
       name: 'Daffodil',
       image: '../../../assets/images/plants/daffodil-planted.png',
       badge:'../../../assets/images/plants/badges/daffodil.png',
-      explanation: 'Deze bloemen hebben geholpen aan de <a routerLink="/results">maandelijkse vragenlijst.</a> De resultaten van het onderzoek worden nog besproken en het gevolg hiervan kun je later bij de bloemen zien.',
+      explanation: 'Deze narcis vertegenwoordigt deelname aan de <a routerLink="/results">maandelijkse vragenlijst</a> over het effect van personeelstekorten in de gezondheidszorg. De resultaten van jouw bijdrage worden nog besproken, en de impact zal later zichtbaar zijn bij deze narcis.',
       question: '<i class="fa-solid fa-book"></i><h2>Wist je dat?</h2>',
       description: `
-        <p>Narcissen worden vaak geassocieerd met lenteseizoen en symboliseren
+        <p>Narcissen worden vaak geassocieerd met het lenteseizoen en symboliseren
         vernieuwing en wedergeboorte.</p>
       `,
+      unlocked: false,
+      initiallyUnlocked: false,
     },
     {
       id: 'cactus',
       name: 'Cactus',
       image: '../../../assets/images/plants/cactus-planted.png',
       badge:'../../../assets/images/plants/badges/cactus.png',
-      explanation: 'Deze bloemen hebben geholpen aan de <a routerLink="/results">maandelijkse vragenlijst.</a> De resultaten van het onderzoek worden nog besproken en het gevolg hiervan kun je later bij de bloemen zien.',
+      explanation: 'Deze cactus vertegenwoordigt deelname aan de <a routerLink="/results">maandelijkse vragenlijst</a> over het effect van personeelstekorten in de gezondheidszorg. De resultaten van jouw bijdrage worden nog besproken, en de impact zal later zichtbaar zijn bij deze cactus.',
       question: '<i class="fa-solid fa-book"></i><h2>Wist je dat?</h2>',
       description: `
         <p>Cactussen staan bekend om hun vermogen om te overleven in droge omgevingen.
         Ze slaan water op in hun stengels en kunnen lange perioden zonder regen overleven.</p>
       `,
       unlocked: false,
-      
+      initiallyUnlocked: false,
     },
   ];
 
