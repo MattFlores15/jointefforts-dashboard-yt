@@ -59,7 +59,7 @@ badges: Badge[] = [
   {
     id: 7,
     name: 'rose',
-    image: '../../../assets/images/plants/badges/rose.png',
+    image: '../../../assets/images/plants/badges/flower2.png',
   },
   {
     id: 8,

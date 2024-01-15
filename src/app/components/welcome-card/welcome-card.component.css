@@ -1,9 +1,9 @@
 /* desktop-dashboard.component.css */
 
 .welcome-card .card {
-    background: linear-gradient(to bottom, #72D9FF, #C8F0FF);
+
 }
 
 #rewardUnlocked{
-    text-shadow: 1px 1px 1px #ffffFF;
+    text-shadow: 1px 1px 1px #72D9FF;
 }

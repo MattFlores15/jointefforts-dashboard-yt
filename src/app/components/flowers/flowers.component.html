@@ -12,7 +12,7 @@
   </div>
   <!-- Flower Grid -->
   <div
-    class="flex justify-between items-center flex-wrap gap-8 w-full h-full bg-contain bg-center pb-72 rounded-md shadow-lg p-10 border-2 border-gray-100"
+    class="flex justify-between items-center flex-wrap gap-8 w-full h-full bg-center pb-72 rounded-md shadow-lg p-10 border-2 border-gray-100"
     style="background-image: url('../../../assets/images/plants/garden.jpg')"
   >
     <div
@@ -33,9 +33,6 @@
           <div class="w-full text-center flex items-center justify-center">
             <h3
               class="text-lg font-bold text-white bg-orange-900 w-44 rounded-b-lg p-2 py-4 shadow-md plant-pot"
-              style="
-                background-image: url('../../../assets/images/istockphoto-494640524-170667a.jpg');
-              "
             >
               {{ flower.name }}
             </h3>
@@ -62,14 +59,16 @@
                 </h2>
               </div>
               <div
-                class="text-white text-xs mb-2 popup-text flex flex-col justify-between items-center gap-2 self-center"
+                class="text-white text-base mb-2 popup-text flex flex-col justify-between items-center gap-2 self-center"
               >
-                <h3
+                <!-- <h3
                   [innerHTML]="flower.question"
                   class="text-sm font-semibold flex justify-center items-center gap-2 self-start"
-                ></h3>
+                ></h3> -->
                 <p
-                  [innerHTML]="flower.description || 'No description available'"
+                  [innerHTML]="
+                    flower.explanation || 'Geen beschrijving beschikbaar'
+                  "
                 ></p>
               </div>
             </div>

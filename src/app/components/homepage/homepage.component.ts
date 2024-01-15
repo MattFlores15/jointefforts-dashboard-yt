@@ -3,11 +3,12 @@ import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
 import { CalendarComponent } from '../calendar/calendar.component';
 import { WelcomeCardComponent } from '../welcome-card/welcome-card.component';
 import { RouterModule } from '@angular/router';
+import { NewsCardComponent } from '../news-card/news-card.component';
 
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [CalendarModule, CalendarComponent, WelcomeCardComponent, RouterModule],
+  imports: [CalendarModule, CalendarComponent, WelcomeCardComponent, RouterModule, NewsCardComponent],
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css'],
 })
