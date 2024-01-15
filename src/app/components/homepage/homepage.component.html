@@ -1,9 +1,16 @@
 <!-- homepage.component.html -->
 <div class="w-full p-4 flex flex-col justify-start gap-2">
+  <!-- Header -->
+  <div class="px-4">
+    <div class="p-4 text-white bg-violet-400 w-full rounded-md">
+      <h2 class="text-3xl font-bold">Home</h2>
+    </div>
+  </div>
   <div class="flex justify-between mb-8">
     <!-- Left Section -->
-    <div class="flex flex-col justify-between w-fit">
-      <div class="flex-1 p-4 flex-col gap-20 justify-between w-fit rounded-lg">
+    <!-- Welcome Card -->
+    <div class="welcome-card-container flex flex-col justify-between w-full">
+      <div class="flex-1 p-4 flex-col gap-10 justify-between w-full rounded-lg">
         <app-welcome-card></app-welcome-card>
       </div>
     </div>
@@ -12,11 +19,6 @@
     <app-calendar></app-calendar>
   </div>
 
-  <div class="px-4">
-    <div class="p-4 text-white bg-violet-400 w-full rounded-md">
-      <h2 class="text-3xl font-bold">Home</h2>
-    </div>
-  </div>
   <!-- Main Content -->
   <div class="mt-4 flex justify-between">
     <!-- Main Page Cards -->
@@ -98,7 +100,7 @@
         </a>
       </div>
       <!-- How are you helping Card -->
-      <div class="flex-grow w-fit p-3 group">
+      <!-- <div class="flex-grow w-fit p-3 group">
         <a
           routerLink="/news"
           class="w-full h-fit bg-white group-hover:shadow-violet-400 transition duration-300 rounded-xl shadow-lg p-2 flex flex-col items-center justify-center"
@@ -134,7 +136,7 @@
             </div>
           </div>
         </a>
-      </div>
+      </div> -->
       <!-- Support Card -->
       <div class="flex-grow w-fit p-3 group">
         <a
@@ -176,7 +178,7 @@
           </div>
         </a>
       </div>
-      <div class="flex-grow w-fit p-3 group">
+      <div class="flex-grow w-full p-3 group">
         <app-news-card></app-news-card>
       </div>
     </div>

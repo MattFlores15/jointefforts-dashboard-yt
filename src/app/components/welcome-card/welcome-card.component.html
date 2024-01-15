@@ -1,17 +1,19 @@
 <!-- desktop-dashboard.component.html -->
 
-<div class="welcome-card">
+<div class="welcome-card w-full">
   <div
-    class="card p-4 rounded-md shadow-lg shadow-gray-200 flex justify-start items-center gap-4 bg-sky-200 border-2 border-gray-200"
+    class="card w-full p-4 rounded-lg shadow-lg shadow-gray-200 flex justify-start items-center gap-4 bg-sky-200 border-2 border-sky-300"
   >
-    <div class="user-image w-28 rounded-lg">
+    <div class="user-image w-28 rounded-xl">
       <img
-        class="w-full h-auto rounded-lg"
+        class="w-full h-auto rounded-xl shadow-lg"
         src="../../../assets/images/pexels-karolina-grabowska-5206931.jpg"
         alt=""
       />
     </div>
-    <div class="welcome-message">
+    <div
+      class="welcome-message w-full flex flex-col justify-between items-start"
+    >
       <div class="welcome-greeting flex justify-start items-center gap-2">
         <h2 class="text-2xl font-bold text-white">Welkom Terug</h2>
         <div class="welcome-user">
@@ -20,9 +22,11 @@
       </div>
 
       <div
-        class="flower-count flex justify-between items-center gap-2 text-white"
+        class="flower-count flex justify-end items-center gap-1 text-white w-fit self-end"
       >
-        <p class="text-lg w-52">Je hebt bloemenbadges verdiend!</p>
+        <p class="text-lg w-60 text-violet-400 text-right font-semibold">
+          Je hebt bloemenbadges verdiend!
+        </p>
 
         <div class="welcome-image w-28 flex items-center justify-center">
           <span
@@ -32,7 +36,7 @@
           >
           <ng-container *ngIf="randomBadge">
             <img
-              class="w-full h-auto"
+              class="w-full h-auto shadow-lg rounded-full"
               [src]="randomBadge.image"
               alt="{{ randomBadge.name }}"
             />

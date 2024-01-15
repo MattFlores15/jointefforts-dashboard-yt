@@ -17,3 +17,11 @@
     color: #333;
     /* or any other color for day number */
 }
+
+.welcome-card-container{
+    width: 50%;
+}
+
+.news-card {
+    width: 100% !important;
+}

@@ -1,13 +1,3 @@
-<div class="flex justify-between items-start w-full p-4">
-  <div class="flex flex-col justify-between w-fit">
-    <div class="flex-1 p-4 flex-col gap-20 justify-between w-fit rounded-lg">
-      <!-- Welcome Card -->
-      <app-welcome-card></app-welcome-card>
-    </div>
-  </div>
-  <app-progress-card></app-progress-card>
-</div>
-
 <div class="w-full p-4">
   <!-- Header -->
   <div class="px-4">
@@ -15,98 +5,110 @@
       <h2 class="text-3xl font-bold">Surveys</h2>
     </div>
   </div>
-  <!-- Filters -->
-  <div class="mt-4 flex justify-between px-8 space-x-4 p-2">
-    <!-- Replace dropdown with tabs for survey type filtering -->
-    <div>
-      <div class="flex space-x-4">
-        <button
-          class="tab-btn hover:text-violet-200 hover:border-b hover:border-violet-200"
-          [ngClass]="{ 'tab-btn-active': currentSurveyType === 'Overview' }"
-          (click)="filterSurveys('Overview')"
+  <div class="flex justify-between items-start w-full p-4">
+    <div class="flex flex-col justify-between w-fit">
+      <div class="flex-1 p-4 flex-col gap-20 justify-between w-fit rounded-lg">
+        <!-- Welcome Card -->
+        <app-welcome-card></app-welcome-card>
+      </div>
+    </div>
+    <app-progress-card></app-progress-card>
+  </div>
+
+  <div class="w-full p-4">
+    <!-- Filters -->
+    <div class="mt-4 flex justify-between px-8 space-x-4 p-2">
+      <!-- Replace dropdown with tabs for survey type filtering -->
+      <div>
+        <div class="flex space-x-4">
+          <button
+            class="tab-btn hover:text-violet-200 hover:border-b hover:border-violet-200"
+            [ngClass]="{ 'tab-btn-active': currentSurveyType === 'Overview' }"
+            (click)="filterSurveys('Overview')"
+          >
+            Overview
+          </button>
+          <button
+            class="tab-btn hover:text-violet-200 hover:border-b hover:border-violet-200"
+            [ngClass]="{ 'tab-btn-active': currentSurveyType === 'Weekly' }"
+            (click)="filterSurveys('Weekly')"
+          >
+            Weekly Surveys
+          </button>
+          <button
+            class="tab-btn hover:text-violet-200 hover:border-b hover:border-violet-200"
+            [ngClass]="{ 'tab-btn-active': currentSurveyType === 'Monthly' }"
+            (click)="filterSurveys('Monthly')"
+          >
+            Monthly Surveys
+          </button>
+          <button
+            class="tab-btn hover:text-violet-200 hover:border-b hover:border-violet-200"
+            [ngClass]="{ 'tab-btn-active': currentSurveyType === 'Biannual' }"
+            (click)="filterSurveys('Biannual')"
+          >
+            Biannual Surveys
+          </button>
+        </div>
+      </div>
+
+      <!-- Existing code for dropdown filter by status -->
+      <div>
+        <label for="surveyStatus" class="mr-2">Filter by Status:</label>
+        <select
+          id="surveyStatus"
+          class="p-2 border border-gray-300 rounded w-32 cursor-pointer"
+          (change)="filterByStatus($event)"
         >
-          Overview
-        </button>
-        <button
-          class="tab-btn hover:text-violet-200 hover:border-b hover:border-violet-200"
-          [ngClass]="{ 'tab-btn-active': currentSurveyType === 'Weekly' }"
-          (click)="filterSurveys('Weekly')"
-        >
-          Weekly Surveys
-        </button>
-        <button
-          class="tab-btn hover:text-violet-200 hover:border-b hover:border-violet-200"
-          [ngClass]="{ 'tab-btn-active': currentSurveyType === 'Monthly' }"
-          (click)="filterSurveys('Monthly')"
-        >
-          Monthly Surveys
-        </button>
-        <button
-          class="tab-btn hover:text-violet-200 hover:border-b hover:border-violet-200"
-          [ngClass]="{ 'tab-btn-active': currentSurveyType === 'Biannual' }"
-          (click)="filterSurveys('Biannual')"
-        >
-          Biannual Surveys
-        </button>
+          <option value="To do" class="cursor-pointer">To Do</option>
+          <option value="Completed" class="cursor-pointer">Completed</option>
+        </select>
       </div>
     </div>
 
-    <!-- Existing code for dropdown filter by status -->
-    <div>
-      <label for="surveyStatus" class="mr-2">Filter by Status:</label>
-      <select
-        id="surveyStatus"
-        class="p-2 border border-gray-300 rounded w-32 cursor-pointer"
-        (change)="filterByStatus($event)"
-      >
-        <option value="To do" class="cursor-pointer">To Do</option>
-        <option value="Completed" class="cursor-pointer">Completed</option>
-      </select>
-    </div>
-  </div>
-
-  <!-- Updated Survey Cards Table -->
-  <div class="container mx-auto p-4">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <!-- Sample cards, replace with actual survey data using *ngFor -->
-      <div *ngFor="let survey of filteredSurveys">
-        <a [routerLink]="['/individual-survey', survey.type.toLowerCase()]">
-          <div
-            class="bg-white p-4 rounded-md shadow-md hover:shadow-violet-400"
-          >
-            <h2 class="text-lg font-semibold mb-2">{{ survey.title }}</h2>
-            <p class="text-gray-500">{{ survey.description }}</p>
-            <div class="mt-4 flex justify-between">
-              <span class="text-gray-600"
-                >Status:
-                <span [class.text-green-500]="survey.status === 'Completed'">
-                  {{ survey.status }}</span
-                ></span
-              >
-              <span class="text-gray-600"
-                >Type:
-                <span class="text-blue-500"> {{ survey.type }}</span></span
-              >
-            </div>
-            <!-- Progress bar -->
-            <div class="mt-4">
-              <div
-                [style.width.%]="survey.completionPercentage"
-                [ngClass]="getProgressBarColor(survey.completionPercentage)"
-                class="h-2 w-full rounded-md bg-gray-200"
-              >
-                <!-- Set width dynamically based on completion percentage -->
-                <!-- <div class="h-full rounded-md w-full bg-gray-200"></div> -->
+    <!-- Updated Survey Cards Table -->
+    <div class="container mx-auto p-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Sample cards, replace with actual survey data using *ngFor -->
+        <div *ngFor="let survey of filteredSurveys">
+          <a [routerLink]="['/individual-survey', survey.type.toLowerCase()]">
+            <div
+              class="bg-white p-4 rounded-md shadow-md hover:shadow-violet-400"
+            >
+              <h2 class="text-lg font-semibold mb-2">{{ survey.title }}</h2>
+              <p class="text-gray-500">{{ survey.description }}</p>
+              <div class="mt-4 flex justify-between">
+                <span class="text-gray-600"
+                  >Status:
+                  <span [class.text-green-500]="survey.status === 'Completed'">
+                    {{ survey.status }}</span
+                  ></span
+                >
+                <span class="text-gray-600"
+                  >Type:
+                  <span class="text-blue-500"> {{ survey.type }}</span></span
+                >
               </div>
-              <div
-                [ngClass]="getProgressTextColor(survey.completionPercentage)"
-                class="mt-2"
-              >
-                {{ survey.completionPercentage }}%
+              <!-- Progress bar -->
+              <div class="mt-4">
+                <div
+                  [style.width.%]="survey.completionPercentage"
+                  [ngClass]="getProgressBarColor(survey.completionPercentage)"
+                  class="h-2 w-full rounded-md bg-gray-200"
+                >
+                  <!-- Set width dynamically based on completion percentage -->
+                  <!-- <div class="h-full rounded-md w-full bg-gray-200"></div> -->
+                </div>
+                <div
+                  [ngClass]="getProgressTextColor(survey.completionPercentage)"
+                  class="mt-2"
+                >
+                  {{ survey.completionPercentage }}%
+                </div>
               </div>
             </div>
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
     </div>
   </div>

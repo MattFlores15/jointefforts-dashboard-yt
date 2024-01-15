@@ -1,12 +1,4 @@
 <!-- src/app/results/results.component.html -->
-<div class="flex justify-between items-start w-full p-4">
-  <div class="flex flex-col justify-between w-fit">
-    <div class="flex-1 p-4 flex-col gap-20 justify-between w-fit rounded-lg">
-      <app-news-card></app-news-card>
-    </div>
-  </div>
-  <app-progress-card></app-progress-card>
-</div>
 <div class="w-full p-4">
   <!-- Header -->
   <div class="px-4">
@@ -14,94 +6,106 @@
       <h2 class="text-3xl font-bold">Results</h2>
     </div>
   </div>
-  <!-- Filters -->
-  <div class="flex justify-between items-center mb-2 p-5">
-    <div class="flex justify-evenly items-center gap-5">
-      <div class="flex gap-2 items-center justify-evenly">
-        <label for="timeframe">Timeframe:</label>
-        <select
-          id="timeframe"
-          class="p-2 border border-gray-300 rounded w-28 cursor-pointer"
-        >
-          <option value="To do">All-time</option>
-          <option value="Completed">per Week</option>
-          <option value="Completed">per Month</option>
-          <option value="Completed">per Year</option>
-          <!-- Add options for All-time, per Month, per Week, per Year -->
-        </select>
-      </div>
-      <div class="flex gap-2 items-center justify-evenly">
-        <label for="survey">Survey:</label>
-        <select
-          id="survey"
-          class="p-2 border border-gray-300 rounded w-28 cursor-pointer"
-        >
-          <option value="To do">All</option>
-          <option value="Completed">Weekly</option>
-          <option value="Completed">Monthly</option>
-          <option value="Completed">Biannual</option>
-          <!-- Add options for All, Weekly, Monthly, Biannual -->
-        </select>
-      </div>
-      <div class="flex gap-2 items-center justify-evenly">
-        <label for="workspace">Workspace:</label>
-        <select
-          id="workspace"
-          class="p-2 border border-gray-300 rounded w-28 cursor-pointer"
-        >
-          <option value="To do">All</option>
-          <option value="Completed">Your Clinic</option>
-          <option value="Completed">Hospital 1</option>
-          <option value="Completed">Clinic 2</option>
-          <option value="Completed">Hospital 2</option>
-          <option value="Completed">Clinic 2</option>
-          <!-- Add options for All, Your Clinic, n number of different clinics names -->
-        </select>
+  <div class="flex justify-between items-start w-full p-4">
+    <div class="flex flex-col justify-between w-fit">
+      <div class="flex-1 p-4 flex-col gap-20 justify-between w-fit rounded-lg">
+        <app-news-card></app-news-card>
       </div>
     </div>
-    <button class="text-black py-2 px-4 rounded self-end hover:text-violet-400">
-      <span class="text-xl self-end"
-        ><i class="fa-solid fa-file-arrow-down"></i
-      ></span>
-      Download PDF
-    </button>
+    <app-progress-card></app-progress-card>
   </div>
-
-  <!-- Include the graph components -->
-  <div class="flex flex-col justify-evenly items-start w-full py-6 px-10">
-    <div class="flex justify-between items-start w-full gap-10">
-      <div
-        class="flex flex-col justify-evenly items-start gap-10 w-full h-full"
-      >
-        <app-satisfaction-graph
-          [data]="satisfactionData"
-          class="w-full h-full"
-        ></app-satisfaction-graph>
-        <div class="flex flex-col gap-5 justify-between items-start w-full">
-          <div class="flex justify-between items-start w-full">
-            <app-workload-graph
-              [data]="workloadData"
-              class="w-full h-full"
-            ></app-workload-graph>
-          </div>
-          <div
-            class="flex-row-reverse flex justify-between items-start gap-10 w-full"
+  <div class="w-full p-4">
+    <!-- Filters -->
+    <div class="flex justify-between items-center mb-2 p-5">
+      <div class="flex justify-evenly items-center gap-5">
+        <div class="flex gap-2 items-center justify-evenly">
+          <label for="timeframe">Timeframe:</label>
+          <select
+            id="timeframe"
+            class="p-2 border border-gray-300 rounded w-28 cursor-pointer"
           >
-            <app-communication-graph
-              class="w-full h-full"
-              [data]="communicationData"
-            ></app-communication-graph>
-          </div>
+            <option value="To do">All-time</option>
+            <option value="Completed">per Week</option>
+            <option value="Completed">per Month</option>
+            <option value="Completed">per Year</option>
+            <!-- Add options for All-time, per Month, per Week, per Year -->
+          </select>
+        </div>
+        <div class="flex gap-2 items-center justify-evenly">
+          <label for="survey">Survey:</label>
+          <select
+            id="survey"
+            class="p-2 border border-gray-300 rounded w-28 cursor-pointer"
+          >
+            <option value="To do">All</option>
+            <option value="Completed">Weekly</option>
+            <option value="Completed">Monthly</option>
+            <option value="Completed">Biannual</option>
+            <!-- Add options for All, Weekly, Monthly, Biannual -->
+          </select>
+        </div>
+        <div class="flex gap-2 items-center justify-evenly">
+          <label for="workspace">Workspace:</label>
+          <select
+            id="workspace"
+            class="p-2 border border-gray-300 rounded w-28 cursor-pointer"
+          >
+            <option value="To do">All</option>
+            <option value="Completed">Your Clinic</option>
+            <option value="Completed">Hospital 1</option>
+            <option value="Completed">Clinic 2</option>
+            <option value="Completed">Hospital 2</option>
+            <option value="Completed">Clinic 2</option>
+            <!-- Add options for All, Your Clinic, n number of different clinics names -->
+          </select>
         </div>
       </div>
-      <div class="flex flex-col justify-between items-center gap-8 h-full">
-        <app-teamwork-graph [data]="teamworkData"></app-teamwork-graph>
-        <app-job-security-graph
-          [data]="jobSecurityData"
-        ></app-job-security-graph>
-        <app-stress-level-graph
-          [data]="stressLevelData"
-        ></app-stress-level-graph>
+      <button
+        class="text-black py-2 px-4 rounded self-end hover:text-violet-400"
+      >
+        <span class="text-xl self-end"
+          ><i class="fa-solid fa-file-arrow-down"></i
+        ></span>
+        Download PDF
+      </button>
+    </div>
+
+    <!-- Include the graph components -->
+    <div class="flex flex-col justify-evenly items-start w-full py-6 px-10">
+      <div class="flex justify-between items-start w-full gap-10">
+        <div
+          class="flex flex-col justify-evenly items-start gap-10 w-full h-full"
+        >
+          <app-satisfaction-graph
+            [data]="satisfactionData"
+            class="w-full h-full"
+          ></app-satisfaction-graph>
+          <div class="flex flex-col gap-5 justify-between items-start w-full">
+            <div class="flex justify-between items-start w-full">
+              <app-workload-graph
+                [data]="workloadData"
+                class="w-full h-full"
+              ></app-workload-graph>
+            </div>
+            <div
+              class="flex-row-reverse flex justify-between items-start gap-10 w-full"
+            >
+              <app-communication-graph
+                class="w-full h-full"
+                [data]="communicationData"
+              ></app-communication-graph>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-between items-center gap-8 h-full">
+          <app-teamwork-graph [data]="teamworkData"></app-teamwork-graph>
+          <app-job-security-graph
+            [data]="jobSecurityData"
+          ></app-job-security-graph>
+          <app-stress-level-graph
+            [data]="stressLevelData"
+          ></app-stress-level-graph>
+        </div>
       </div>
     </div>
   </div>
