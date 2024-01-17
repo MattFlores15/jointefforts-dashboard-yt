@@ -1,27 +1,105 @@
-# JointeffortsDashboard
+# Joint Efforts Healthcare Professional Dashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+## Project Overview
 
-## Development server
+### Project Name
+Joint Efforts Healthcare Professional Dashboard
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Project Description
+The Joint Efforts Healthcare Professional Dashboard is a Proof of Concept (PoC) developed as part of the Joint Efforts initiative, aimed at enhancing the participation of healthcare professionals in surveys focused on improving working conditions and personal well-being. This PoC focuses on the desktop iteration, specifically evaluating the appeal and engagement level of Results and News pages, and the presentation of Survey cards.
 
-## Code scaffolding
+### Technology Stack
+- **Frontend Framework:** Angular
+- **CSS Framework:** Tailwind CSS
+- **Deployment:** Netlify
+- **Icons:** FontAwesome
+- **Charts:** Chart.js
+- **Additional Libraries:** Slick Carousel, Syncfusion Calendar
+- **Version Control:** GitHub
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation and Setup
 
-## Build
+### Prerequisites
+- Node.js and npm installed
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Instructions
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/your-username/joint-efforts-dashboard.git](https://github.com/MattFlores15/jointefforts-dashboard-yt.git)
+   cd joint-efforts-dashboard
+   ```
 
-## Running unit tests
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Run the application:
+   ```bash
+   ng serve
+   ```
 
-## Running end-to-end tests
+4. Open your browser and navigate to `http://localhost:4200/` to view the dashboard.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Project Structure
 
-## Further help
+The application follows a component-based structure for better modularity and maintainability. The main components include:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Base Dashboard Pages:**
+  1. Onboarding (2 pages)
+  2. Login
+  3. Homepage
+  4. Surveys
+  5. Results
+  6. News
+  7. Support
+
+- **Shared Components:**
+  - TopNavbarComponent
+  - SidebarComponent
+
+- **Standalone Components:**
+  - Every component is set as “standalone: true” to ensure proper functioning.
+
+## Development Process
+
+### Initial Coding Approach
+The initial development started with vanilla HTML/CSS/JS but transitioned to Angular/Tailwind framework for compatibility with the main project. This choice was influenced by Angular's ease of use, component-based structure, and alignment with the company's main project stack.
+
+### App Component
+The `AppComponent` manages the layout, visibility of the top navbar, sidebar, and main content based on the current route.
+
+### Styling
+Tailwind CSS is used for styling, providing a utility-first approach for rapid development. FontAwesome is utilized for icons.
+
+### Data Visualization
+Chart.js is employed for dynamic and interactive charts on the Results page, enhancing the presentation of survey results.
+
+### Routing
+- **Routing Module:** `AppRoutingModule` configures routes using Angular Router.
+- **Routes:** Configured routes for each page/component.
+
+### Version Control & Deployment
+- **Version Control:** Efficiently managed through GitHub, ensuring code collaboration and version history.
+- **Deployment:** Hosted on Netlify, providing accessibility for testing and evaluation.
+
+## Configuration
+
+### app.config.ts
+This file provides Angular application configuration, including router configuration using `provideRouter`.
+
+### App Module
+
+### app.module.ts
+The main module of the Angular application, including declarations, imports, and providers.
+
+## Angular Configuration
+
+### angular.json
+Angular configuration file specifying build configurations, paths, styles, scripts, and other settings for the application.
+
+## Conclusion
+
+The Joint Efforts Dashboard Proof of Concept Desktop iteration successfully leverages Angular and Tailwind CSS to create an engaging and responsive user interface. The application is structured with modular components and follows best practices for Angular development. External libraries such as Chart.js and Font Awesome enhance visualization, and deployment on Netlify ensures accessibility for testing. The PoC serves as a foundation for further development and refinement of the Joint Efforts Dashboard.
+
+**Note:** Ensure that all dependencies are installed before running the application using the `npm install` command.
