@@ -51,7 +51,7 @@ The application follows a component-based structure for better modularity and ma
   3. Homepage
   4. Surveys
   5. Results
-  6. News
+  6. Rewards
   7. Support
 
 - **Shared Components:**
